@@ -1,0 +1,234 @@
+Table bbox: (111.11440677966101, 127.16166666666668, 467.1155898305085, 440.2000025)
+Table width: 356.00
+Table height: 313.04
+
+Row 1:
+  Cell 1: text='' | bbox=(111.11, 127.16, 116.45, 141.98) | width=5.34
+  Cell 2: text='Employee Name' | bbox=(116.45, 127.16, 266.70, 141.98) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 127.16, 272.05, 141.98) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 127.16, 277.50, 141.98) | width=5.45
+  Cell 5: text='Sowmith Voona' | bbox=(277.50, 127.16, 461.77, 141.98) | width=184.27
+  Cell 6: None
+  Cell 7: None
+  Cell 8: None
+  Cell 9: text='' | bbox=(461.77, 127.16, 467.12, 141.98) | width=5.35
+
+Row 2:
+  Cell 1: text='' | bbox=(111.11, 141.98, 116.45, 156.98) | width=5.34
+  Cell 2: text='Employee Id' | bbox=(116.45, 141.98, 266.70, 156.98) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 141.98, 272.05, 156.98) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 141.98, 277.50, 156.98) | width=5.45
+  Cell 5: text='SSSHYD397' | bbox=(277.50, 141.98, 461.77, 156.98) | width=184.27
+  Cell 6: None
+  Cell 7: None
+  Cell 8: None
+  Cell 9: text='' | bbox=(461.77, 141.98, 467.12, 156.98) | width=5.35
+
+Row 3:
+  Cell 1: text='' | bbox=(111.11, 156.98, 116.45, 172.00) | width=5.34
+  Cell 2: text='Designation' | bbox=(116.45, 156.98, 266.70, 172.00) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 156.98, 272.05, 172.00) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 156.98, 277.50, 172.00) | width=5.45
+  Cell 5: text='US HR & Immigration Specialist' | bbox=(277.50, 156.98, 461.77, 172.00) | width=184.27
+  Cell 6: None
+  Cell 7: None
+  Cell 8: None
+  Cell 9: text='' | bbox=(461.77, 156.98, 467.12, 172.00) | width=5.35
+
+Row 4:
+  Cell 1: text='' | bbox=(111.11, 172.00, 116.45, 186.92) | width=5.34
+  Cell 2: text='Department' | bbox=(116.45, 172.00, 266.70, 186.92) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 172.00, 272.05, 186.92) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 172.00, 277.50, 186.92) | width=5.45
+  Cell 5: text='US Immigration' | bbox=(277.50, 172.00, 461.77, 186.92) | width=184.27
+  Cell 6: None
+  Cell 7: None
+  Cell 8: None
+  Cell 9: text='' | bbox=(461.77, 172.00, 467.12, 186.92) | width=5.35
+
+Row 5:
+  Cell 1: text='' | bbox=(111.11, 186.92, 116.45, 202.11) | width=5.34
+  Cell 2: text='Annexure I' | bbox=(116.45, 186.92, 461.77, 202.11) | width=345.32
+  Cell 3: None
+  Cell 4: None
+  Cell 5: None
+  Cell 6: None
+  Cell 7: None
+  Cell 8: None
+  Cell 9: text='' | bbox=(461.77, 186.92, 467.12, 202.11) | width=5.35
+
+Row 6:
+  Cell 1: text='' | bbox=(111.11, 202.11, 116.45, 217.00) | width=5.34
+  Cell 2: text='Salary Components' | bbox=(116.45, 202.11, 266.70, 217.00) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 202.11, 272.05, 217.00) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 202.11, 277.50, 217.00) | width=5.45
+  Cell 5: text='Per Month' | bbox=(277.50, 202.11, 372.73, 217.00) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 202.11, 378.08, 217.00) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 202.11, 383.52, 217.00) | width=5.44
+  Cell 8: text='Per Annum' | bbox=(383.52, 202.11, 461.77, 217.00) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 202.11, 467.12, 217.00) | width=5.35
+
+Row 7:
+  Cell 1: text='' | bbox=(111.11, 217.00, 116.45, 232.00) | width=5.34
+  Cell 2: text='Basic' | bbox=(116.45, 217.00, 266.70, 232.00) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 217.00, 272.05, 232.00) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 217.00, 277.50, 232.00) | width=5.45
+  Cell 5: text='14,583' | bbox=(277.50, 217.00, 372.73, 232.00) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 217.00, 378.08, 232.00) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 217.00, 383.52, 232.00) | width=5.44
+  Cell 8: text='1,75,000' | bbox=(383.52, 217.00, 461.77, 232.00) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 217.00, 467.12, 232.00) | width=5.35
+
+Row 8:
+  Cell 1: text='' | bbox=(111.11, 232.00, 116.45, 247.00) | width=5.34
+  Cell 2: text='HRA' | bbox=(116.45, 232.00, 266.70, 247.00) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 232.00, 272.05, 247.00) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 232.00, 277.50, 247.00) | width=5.45
+  Cell 5: text='5,833' | bbox=(277.50, 232.00, 372.73, 247.00) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 232.00, 378.08, 247.00) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 232.00, 383.52, 247.00) | width=5.44
+  Cell 8: text='70,000' | bbox=(383.52, 232.00, 461.77, 247.00) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 232.00, 467.12, 247.00) | width=5.35
+
+Row 9:
+  Cell 1: text='' | bbox=(111.11, 247.00, 116.45, 262.00) | width=5.34
+  Cell 2: text='Conveyance Allowance' | bbox=(116.45, 247.00, 266.70, 262.00) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 247.00, 272.05, 262.00) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 247.00, 277.50, 262.00) | width=5.45
+  Cell 5: text='5,833' | bbox=(277.50, 247.00, 372.73, 262.00) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 247.00, 378.08, 262.00) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 247.00, 383.52, 262.00) | width=5.44
+  Cell 8: text='70,000' | bbox=(383.52, 247.00, 461.77, 262.00) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 247.00, 467.12, 262.00) | width=5.35
+
+Row 10:
+  Cell 1: text='' | bbox=(111.11, 262.00, 116.45, 277.03) | width=5.34
+  Cell 2: text='Special Allowance' | bbox=(116.45, 262.00, 266.70, 277.03) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 262.00, 272.05, 277.03) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 262.00, 277.50, 277.03) | width=5.45
+  Cell 5: text='2,917' | bbox=(277.50, 262.00, 372.73, 277.03) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 262.00, 378.08, 277.03) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 262.00, 383.52, 277.03) | width=5.44
+  Cell 8: text='35,000' | bbox=(383.52, 262.00, 461.77, 277.03) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 262.00, 467.12, 277.03) | width=5.35
+
+Row 11:
+  Cell 1: text='' | bbox=(111.11, 277.03, 116.45, 292.03) | width=5.34
+  Cell 2: text='Gross' | bbox=(116.45, 277.03, 266.70, 292.03) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 277.03, 272.05, 292.03) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 277.03, 277.50, 292.03) | width=5.45
+  Cell 5: text='29,167' | bbox=(277.50, 277.03, 372.73, 292.03) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 277.03, 378.08, 292.03) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 277.03, 383.52, 292.03) | width=5.44
+  Cell 8: text='3,50,000' | bbox=(383.52, 277.03, 461.77, 292.03) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 277.03, 467.12, 292.03) | width=5.35
+
+Row 12:
+  Cell 1: text='' | bbox=(111.11, 292.03, 116.45, 306.96) | width=5.34
+  Cell 2: text='Employer Contributions' | bbox=(116.45, 292.03, 266.70, 306.96) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 292.03, 272.05, 306.96) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 292.03, 277.50, 306.96) | width=5.45
+  Cell 5: text='' | bbox=(277.50, 292.03, 372.73, 306.96) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 292.03, 378.08, 306.96) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 292.03, 383.52, 306.96) | width=5.44
+  Cell 8: text='' | bbox=(383.52, 292.03, 461.77, 306.96) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 292.03, 467.12, 306.96) | width=5.35
+
+Row 13:
+  Cell 1: text='' | bbox=(111.11, 306.96, 116.45, 321.72) | width=5.34
+  Cell 2: text='Employer PF' | bbox=(116.45, 306.96, 266.70, 321.72) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 306.96, 272.05, 321.72) | width=5.35
+  Cell 4: text='0.00' | bbox=(272.05, 306.96, 378.08, 321.72) | width=106.03
+  Cell 5: None
+  Cell 6: None
+  Cell 7: text='' | bbox=(378.08, 306.96, 383.52, 321.72) | width=5.44
+  Cell 8: text='0' | bbox=(383.52, 306.96, 461.77, 321.72) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 306.96, 467.12, 321.72) | width=5.35
+
+Row 14:
+  Cell 1: text='Total (A)' | bbox=(111.11, 321.72, 272.05, 337.10) | width=160.94
+  Cell 2: None
+  Cell 3: None
+  Cell 4: text='0' | bbox=(272.05, 321.72, 378.08, 337.10) | width=106.03
+  Cell 5: None
+  Cell 6: None
+  Cell 7: text='0' | bbox=(378.08, 321.72, 467.12, 337.10) | width=89.03
+  Cell 8: None
+  Cell 9: None
+
+Row 15:
+  Cell 1: text='CTC (Cost to company)' | bbox=(111.11, 337.10, 272.05, 364.55) | width=160.94
+  Cell 2: None
+  Cell 3: None
+  Cell 4: text='' | bbox=(272.05, 337.10, 277.50, 364.55) | width=5.45
+  Cell 5: text='' | bbox=(277.50, 337.10, 372.73, 350.68) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 337.10, 378.08, 364.55) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 337.10, 383.52, 364.55) | width=5.44
+  Cell 8: text='' | bbox=(383.52, 337.10, 461.77, 350.68) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 337.10, 467.12, 364.55) | width=5.35
+
+Row 16:
+  Cell 1: None
+  Cell 2: None
+  Cell 3: None
+  Cell 4: None
+  Cell 5: text='29,167' | bbox=(277.50, 350.68, 372.73, 364.55) | width=95.23
+  Cell 6: None
+  Cell 7: None
+  Cell 8: text='3,50,000' | bbox=(383.52, 350.68, 461.77, 364.55) | width=78.25
+  Cell 9: None
+
+Row 17:
+  Cell 1: text='' | bbox=(111.11, 364.55, 116.45, 380.33) | width=5.34
+  Cell 2: text='Employee PF' | bbox=(116.45, 364.55, 266.70, 380.33) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 364.55, 272.05, 380.33) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 364.55, 277.50, 380.33) | width=5.45
+  Cell 5: text='0.00' | bbox=(277.50, 364.55, 372.73, 380.33) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 364.55, 378.08, 380.33) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 364.55, 383.52, 380.33) | width=5.44
+  Cell 8: text='0' | bbox=(383.52, 364.55, 461.77, 380.33) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 364.55, 467.12, 380.33) | width=5.35
+
+Row 18:
+  Cell 1: text='' | bbox=(111.11, 380.33, 116.45, 395.43) | width=5.34
+  Cell 2: text='Professional tax' | bbox=(116.45, 380.33, 266.70, 395.43) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 380.33, 272.05, 395.43) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 380.33, 277.50, 395.43) | width=5.45
+  Cell 5: text='200' | bbox=(277.50, 380.33, 372.73, 395.43) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 380.33, 378.08, 395.43) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 380.33, 383.52, 395.43) | width=5.44
+  Cell 8: text='2,400' | bbox=(383.52, 380.33, 461.77, 395.43) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 380.33, 467.12, 395.43) | width=5.35
+
+Row 19:
+  Cell 1: text='' | bbox=(111.11, 395.43, 116.45, 410.43) | width=5.34
+  Cell 2: text='Total(B)' | bbox=(116.45, 395.43, 266.70, 410.43) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 395.43, 272.05, 410.43) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 395.43, 277.50, 410.43) | width=5.45
+  Cell 5: text='200' | bbox=(277.50, 395.43, 372.73, 410.43) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 395.43, 378.08, 410.43) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 395.43, 383.52, 410.43) | width=5.44
+  Cell 8: text='2,400' | bbox=(383.52, 395.43, 461.77, 410.43) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 395.43, 467.12, 410.43) | width=5.35
+
+Row 20:
+  Cell 1: text='' | bbox=(111.11, 410.43, 116.45, 425.43) | width=5.34
+  Cell 2: text='Total Deductions(A+B)' | bbox=(116.45, 410.43, 266.70, 425.43) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 410.43, 272.05, 425.43) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 410.43, 277.50, 425.43) | width=5.45
+  Cell 5: text='200' | bbox=(277.50, 410.43, 372.73, 425.43) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 410.43, 378.08, 425.43) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 410.43, 383.52, 425.43) | width=5.44
+  Cell 8: text='2400' | bbox=(383.52, 410.43, 461.77, 425.43) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 410.43, 467.12, 425.43) | width=5.35
+
+Row 21:
+  Cell 1: text='' | bbox=(111.11, 425.43, 116.45, 440.20) | width=5.34
+  Cell 2: text='Net Amount' | bbox=(116.45, 425.43, 266.70, 440.20) | width=150.25
+  Cell 3: text='' | bbox=(266.70, 425.43, 272.05, 440.20) | width=5.35
+  Cell 4: text='' | bbox=(272.05, 425.43, 277.50, 440.20) | width=5.45
+  Cell 5: text='28,967' | bbox=(277.50, 425.43, 372.73, 440.20) | width=95.23
+  Cell 6: text='' | bbox=(372.73, 425.43, 378.08, 440.20) | width=5.36
+  Cell 7: text='' | bbox=(378.08, 425.43, 383.52, 440.20) | width=5.44
+  Cell 8: text='3,47,600' | bbox=(383.52, 425.43, 461.77, 440.20) | width=78.25
+  Cell 9: text='' | bbox=(461.77, 425.43, 467.12, 440.20) | width=5.35

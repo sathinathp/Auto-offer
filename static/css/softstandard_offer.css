@@ -1,0 +1,321 @@
+@page {
+    size: A4;
+    margin: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -webkit-print-color-adjust: exact;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.page {
+    width: 595.27pt;
+    height: 841.89pt;
+    position: relative;
+    page-break-after: always;
+    padding-top: 83.3pt;
+    padding-left: 39.4pt;
+    padding-right: 39.4pt;
+    padding-bottom: 48pt;
+    font-size: 10.6pt;
+    line-height: 1.25;
+    color: #000000;
+    overflow: hidden;
+}
+.page:last-of-type {
+    page-break-after: avoid;
+}
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 595.27pt;
+    height: 61.9pt;
+    text-align: center;
+}
+.logo {
+    margin-top: 0;
+    width: 134.5pt;
+    height: 58.5pt;
+}
+.header-line-img {
+    position: absolute;
+    top: 61.9pt;
+    left: 0;
+    width: 595.27pt;
+    height: 3.5pt;
+}
+.footer {
+    position: absolute;
+    bottom: 17.4pt;
+    left: 0;
+    width: 595.27pt;
+    text-align: center;
+}
+.footer-line {
+    width: 535pt;
+    height: 0.75pt;
+    background-color: #7e7c78;
+    margin: 0 auto 23.2pt auto;
+}
+.footer-text {
+    font-size: 10.6pt;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    text-align: center;
+    line-height: 1.15;
+}
+p {
+    margin-bottom: 8pt;
+    text-align: justify;
+}
+.bold {
+    font-weight: bold;
+}
+.center {
+    text-align: center;
+}
+.right {
+    float: right;
+}
+.date-row {
+    margin-bottom: 12pt;
+    overflow: hidden;
+}
+.candidate-address {
+    margin-bottom: 12pt;
+    line-height: 1.25;
+}
+.subject {
+    margin-top: 10pt;
+    margin-bottom: 12pt;
+    text-decoration: underline;
+}
+ul.bullets {
+    margin-bottom: 8pt;
+    margin-left: 20pt;
+}
+ul.bullets li {
+    margin-bottom: 4pt;
+    list-style-type: disc;
+    padding-left: 2pt;
+    text-align: justify;
+}
+.letter-list {
+    margin-bottom: 8pt;
+}
+.list-item {
+    margin-bottom: 6pt;
+    text-align: justify;
+    position: relative;
+    padding-left: 15pt;
+}
+.list-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.contingency-list {
+    margin-bottom: 8pt;
+}
+.contingency-item {
+    margin-bottom: 6pt;
+    text-align: justify;
+    position: relative;
+    padding-left: 15pt;
+}
+.contingency-bullet {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.sub-list {
+    margin-top: 4pt;
+    margin-left: 5pt;
+}
+.sub-item {
+    margin-bottom: 4pt;
+    text-align: justify;
+    position: relative;
+    padding-left: 15pt;
+}
+.sub-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.sub-sub-list {
+    margin-top: 4pt;
+    margin-left: 15pt;
+}
+.signatures-wrapper {
+    position: relative;
+    margin-top: 15pt;
+    left: 0;
+    width: 516.47pt;
+    height: 75pt;
+}
+.sig-col-left {
+    position: absolute;
+    left: 0pt;
+    top: 0;
+    width: 200pt;
+}
+.sig-col-right {
+    position: absolute;
+    left: 312.7pt; /* aligned with HR signature and name start x */
+    top: 0;
+    width: 200pt;
+}
+.sig-img {
+    height: 23pt;
+    margin-bottom: 4pt;
+    display: block;
+}
+.sig-name-with-img {
+    font-size: 10.6pt;
+    line-height: 1.15;
+}
+.sig-title {
+    font-size: 10.6pt;
+    line-height: 1.15;
+}
+
+/* Page 1 overrides — generous spacing matching the original format */
+#page-1 {
+    line-height: 1.22;
+}
+#page-1 p {
+    margin-bottom: 12pt;
+}
+#page-1 .candidate-address {
+    margin-bottom: 12pt;
+}
+#page-1 .date-row {
+    margin-bottom: 12pt;
+}
+#page-1 .subject {
+    margin-top: 10pt;
+    margin-bottom: 12pt;
+}
+#page-1 .letter-list {
+    margin-bottom: 12pt;
+}
+#page-1 .list-item {
+    margin-bottom: 8pt;
+}
+#page-1 ul.bullets {
+    margin-bottom: 12pt;
+}
+#page-1 ul.bullets li {
+    margin-bottom: 4pt;
+}
+
+/* Page 2 overrides — generous spacing matching the original format */
+#page-2 {
+    line-height: 1.22;
+}
+#page-2 p {
+    margin-bottom: 12pt;
+}
+#page-2 .contingency-list {
+    margin-bottom: 12pt;
+}
+#page-2 .contingency-item {
+    margin-bottom: 12pt;
+}
+
+/* Page 3 overrides — generous spacing matching the original format */
+#page-3 {
+    line-height: 1.22;
+}
+#page-3 p {
+    margin-bottom: 12pt;
+}
+#page-3 .contingency-list {
+    margin-bottom: 12pt;
+}
+#page-3 .contingency-item {
+    margin-bottom: 12pt;
+}
+#page-3 .sub-list {
+    margin-top: 6pt;
+}
+#page-3 .sub-item {
+    margin-bottom: 8pt;
+}
+
+/* Page 4 overrides — compact layout to fit signatures at the bottom */
+#page-4 {
+    line-height: 1.15;
+}
+#page-4 p {
+    margin-bottom: 6pt;
+}
+#page-4 .sub-list {
+    margin-bottom: 6pt;
+}
+#page-4 .sub-item {
+    margin-bottom: 4.5pt;
+}
+#page-4 ul.bullets {
+    margin-bottom: 6pt;
+}
+#page-4 ul.bullets li {
+    margin-bottom: 2pt;
+}
+#page-4 .signatures-wrapper {
+    margin-top: 20pt;
+}
+
+/* Page 5 Annexure */
+.annexure-title {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    font-size: 10.6pt;
+}
+.annexure-table {
+    width: 356pt;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: Calibri, Candara, sans-serif;
+    font-size: 11pt;
+}
+.annexure-table td {
+    border: 1.5pt solid #000000;
+    padding: 2.0pt 5pt;
+    vertical-align: middle;
+}
+.annexure-table .blank-row td {
+    height: 12pt;
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+}
+.annexure-table .label-cell {
+    width: 161pt;
+}
+.annexure-table .val-cell {
+    width: 195pt;
+}
+.annexure-table .header-row td {
+    background-color: transparent;
+}
+.annexure-table .highlight-row td {
+    background-color: #B4C6E7 !important;
+}
+.right-align {
+    text-align: right;
+}
+.note-text {
+    width: 356pt;
+    margin: 8pt auto 0 auto;
+    font-size: 10.6pt;
+    line-height: 1.25;
+    color: #DF3D2C; /* Visual red color matching original PDF Note text */
+}

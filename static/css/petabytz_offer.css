@@ -1,0 +1,191 @@
+@page {
+    size: 596pt 843pt;
+    margin: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+
+
+.page {
+    width: 596pt;
+    height: 843pt;
+    position: relative;
+    page-break-after: always;
+    padding-top: 129.84pt;
+    padding-left: 54.03pt;
+    padding-right: 88.2pt;
+    padding-bottom: 50pt;
+    background-color: #ffffff;
+    font-size: 11.6pt;
+    line-height: 1.28;
+}
+
+.page:last-of-type {
+    page-break-after: avoid;
+}
+
+#page-2 {
+    padding-bottom: 72pt;
+}
+
+.page > div:not(.bg-layer), .page > p, .page > table {
+    position: relative;
+    z-index: 2;
+}
+
+/* Background Layer */
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 596pt;
+    height: 843pt;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Headings */
+.pc-head {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13pt;
+    font-weight: bold;
+    color: #365f91;
+    margin-bottom: 15.5pt;
+    text-align: left;
+    line-height: 1;
+}
+.pc-head span {
+    color: #1f467a;
+}
+
+.sec-heading-p1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #1f467a;
+    text-align: center;
+    margin-bottom: 0.89pt;
+    line-height: 1.15;
+}
+
+.sec-heading-p23 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 12pt;
+    color: #4f81ba;
+    text-align: left;
+    line-height: 1.15;
+}
+
+.annexure-title {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 11.6pt;
+    color: #1f467a;
+    text-align: center;
+    margin-bottom: 27pt;
+    line-height: 1.15;
+}
+
+.annexure-sub {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 11.6pt;
+    color: #000000;
+    text-align: center;
+    margin-top: 1.5pt;
+    margin-bottom: 1.5pt;
+    line-height: 1.15;
+}
+
+/* Page 1 paragraphs */
+.page-1-meta {
+    margin-bottom: 11pt;
+    line-height: 1.2;
+}
+
+/* Tables */
+table.info-tbl {
+    width: 443.3pt;
+    margin-left: -4.4pt;
+    border-collapse: collapse;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11.6pt;
+    margin-bottom: 1.5pt;
+}
+table.info-tbl tr {
+    height: 15.4pt;
+}
+table.info-tbl td {
+    border: 0.4pt solid #000000;
+    padding: 0 6pt;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+table.sal-tbl {
+    width: 443.3pt;
+    margin-left: -4.4pt;
+    border-collapse: collapse;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11.6pt;
+    margin-top: 1.1pt;
+}
+table.sal-tbl tr {
+    height: 17.0pt;
+}
+table.sal-tbl tr.sec-part {
+    height: 15.5pt;
+}
+table.sal-tbl td {
+    border: 0.4pt solid #000000;
+    padding: 0 6pt;
+    vertical-align: middle;
+    line-height: 1;
+}
+table.sal-tbl td.val-col2 {
+    text-align: right;
+    padding-right: 14pt;
+}
+table.sal-tbl td.val-col3 {
+    text-align: right;
+    padding-right: 2pt;
+}
+table.sal-tbl tr.hdr td {
+    font-weight: bold;
+    background-color: #a9d08e;
+    text-align: left;
+}
+table.sal-tbl tr.hdr td.r-hdr {
+    text-align: center;
+    padding-right: 6pt;
+}
+table.sal-tbl tr.bld td {
+    font-weight: bold;
+}
+table.sal-tbl tr.hl td {
+    font-weight: bold;
+    background-color: #b4c6e7;
+}
+
+p {
+    margin: 0;
+    text-align: justify;
+    letter-spacing: -0.15px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11.6pt;
+    line-height: 1.32;
+}

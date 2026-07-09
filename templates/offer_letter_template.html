@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Offer Letter - {{ candidate_name }}</title>
+<style>
+@page {
+    size: A4;
+    margin: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    -webkit-print-color-adjust: exact;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+{% if preview_mode %}
+body {
+    background-color: #1e293b;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.page {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+{% else %}
+body {
+    background-color: #ffffff;
+}
+{% endif %}
+
+.page {
+    width: 595.27pt;
+    height: 841.89pt;
+    position: relative;
+    page-break-after: always;
+    padding-top: 85pt;
+    padding-left: 39.2pt;
+    padding-right: 39.2pt;
+    padding-bottom: 55pt;
+    font-size: 10.6pt;
+    line-height: 1.15;
+    color: #000000;
+}
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 595.27pt;
+    height: 70pt;
+    text-align: center;
+}
+.logo {
+    margin-top: 6.95pt;
+    width: 97pt;
+    height: 48.7pt;
+}
+.header-line-img {
+    position: absolute;
+    top: 61.9pt;
+    left: 0;
+    width: 595.27pt;
+    height: 3.5pt;
+}
+.footer {
+    position: absolute;
+    bottom: 17.4pt;
+    left: 0;
+    width: 595.27pt;
+    text-align: center;
+}
+.footer-line {
+    width: 535pt;
+    height: 1.0pt;
+    background-color: #000000;
+    margin: 0 auto 7.6pt auto;
+}
+.footer-text {
+    font-size: 10.6pt;
+    font-family: 'Times New Roman', Times, serif;
+    color: #000000;
+    text-align: center;
+    line-height: 1.15;
+}
+p {
+    margin-bottom: 8pt;
+    text-align: justify;
+}
+.bold {
+    font-weight: bold;
+}
+.center {
+    text-align: center;
+}
+.right {
+    float: right;
+}
+.date-row {
+    margin-bottom: 12pt;
+    overflow: hidden;
+}
+.candidate-address {
+    margin-bottom: 12pt;
+    line-height: 1.25;
+}
+.subject {
+    margin-top: 10pt;
+    margin-bottom: 12pt;
+    text-decoration: underline;
+}
+ul.bullets {
+    margin-bottom: 8pt;
+    margin-left: 20pt;
+}
+ul.bullets li {
+    margin-bottom: 4pt;
+    list-style-type: disc;
+    padding-left: 2pt;
+    text-align: justify;
+}
+.letter-list {
+    margin-bottom: 8pt;
+}
+.list-item {
+    margin-bottom: 6pt;
+    text-align: justify;
+    position: relative;
+    padding-left: 15pt;
+}
+.list-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.contingency-list {
+    margin-bottom: 8pt;
+}
+.contingency-item {
+    margin-bottom: 6pt;
+    text-align: justify;
+    position: relative;
+    padding-left: 15pt;
+}
+.contingency-bullet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: "Segoe UI Symbol", sans-serif;
+}
+.sub-list {
+    margin-top: 4pt;
+    margin-left: 5pt;
+}
+.sub-item {
+    margin-bottom: 4pt;
+    text-align: justify;
+    position: relative;
+    padding-left: 15pt;
+}
+.sub-num {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.sub-sub-list {
+    margin-top: 4pt;
+    margin-left: 15pt;
+}
+.signatures-wrapper {
+    position: relative;
+    margin-top: 15pt;
+    left: 0;
+    width: 516.87pt;
+    height: 65pt;
+}
+.sig-col-left {
+    position: absolute;
+    left: 2.55pt;
+    top: 0;
+    width: 200pt;
+}
+.sig-col-right {
+    position: absolute;
+    left: 304.3pt;
+    top: 0;
+    width: 200pt;
+}
+.sig-img {
+    height: 25pt;
+    margin-bottom: 4pt;
+    display: block;
+}
+.sig-name-with-img {
+    font-size: 10.6pt;
+    line-height: 1.15;
+}
+.sig-title {
+    font-size: 10.6pt;
+    line-height: 1.15;
+}
+/* Page 1 overrides */
+#page-1 p {
+    margin-bottom: 14.0pt;
+}
+#page-1 .letter-list {
+    margin-bottom: 14.0pt;
+}
+#page-1 .list-item {
+    margin-bottom: 14.0pt;
+}
+#page-1 ul.bullets {
+    margin-bottom: 14.0pt;
+}
+#page-1 ul.bullets li {
+    margin-bottom: 7.0pt;
+}
+
+/* Page 2 overrides */
+#page-2 p {
+    margin-bottom: 14.0pt;
+}
+#page-2 .contingency-list {
+    margin-bottom: 14.0pt;
+}
+#page-2 .contingency-item {
+    margin-bottom: 17.5pt;
+}
+
+/* Page 3 overrides */
+#page-3 p {
+    margin-bottom: 8.5pt;
+}
+#page-3 .contingency-list {
+    margin-bottom: 8.5pt;
+}
+#page-3 .contingency-item {
+    margin-bottom: 8.5pt;
+}
+#page-3 .sub-list {
+    margin-top: 4.0pt;
+}
+#page-3 .sub-item {
+    margin-bottom: 6.5pt;
+}
+
+/* Page 4 overrides */
+#page-4 p {
+    margin-bottom: 6pt;
+}
+#page-4 .sub-list {
+    margin-bottom: 6pt;
+}
+#page-4 .sub-item {
+    margin-bottom: 4pt;
+}
+#page-4 ul.bullets {
+    margin-bottom: 6pt;
+}
+#page-4 ul.bullets li {
+    margin-bottom: 4pt;
+}
+#page-4 .signatures-wrapper {
+    margin-top: 12pt;
+}
+
+/* Page 5 Annexure */
+.annexure-title {
+    margin-top: 0;
+    margin-bottom: 12pt;
+    font-size: 10.6pt;
+}
+.annexure-table {
+    width: 401pt;
+    margin: 0 auto;
+    border-collapse: collapse;
+    font-family: Calibri, sans-serif;
+    font-size: 11pt;
+}
+.annexure-table td {
+    border: 1.5pt solid #000000;
+    padding: 2.5pt 6pt;
+    vertical-align: middle;
+}
+.annexure-table .blank-row td {
+    height: 12pt;
+    border-top: none;
+    border-bottom: none;
+    padding: 0;
+}
+.annexure-table .label-cell {
+    width: 221pt;
+}
+.annexure-table .val-cell {
+    width: 180pt;
+}
+.annexure-table .header-row td {
+    background-color: transparent;
+}
+.annexure-table .highlight-row td {
+    background-color: #B4C6E7 !important;
+}
+.right-align {
+    text-align: right;
+}
+.note-text {
+    width: 401pt;
+    margin: 12pt auto 0 auto;
+    font-size: 10.6pt;
+    line-height: 1.25;
+}
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page" id="page-1">
+   <div class="header">
+       <img src="static/images/logo.png" class="logo" />
+       <img src="static/images/divider.png" class="header-line-img" />
+   </div>
+   <div class="content">
+       <div class="date-row">
+           <span class="bold">PRIVATE AND CONFIDENTIAL</span>
+           <span class="right">{{ offer_date }}</span>
+       </div>
+       <p class="candidate-address">
+           Ms. <span class="bold">{{ candidate_name }}</span>,<br/>
+           {{ mobile_number }}
+       </p>
+       <p class="subject bold center">Sub: Employment Offer</p>
+       <p>Dear <span class="bold">{{ candidate_name }}</span>,</p>
+       <p>Subsequent to the discussions that you had with request to your internal movement within the organization, we are pleased to extend an offer of employment to you from <span class="bold">{{ company_name }}</span> as a <span class="bold">{{ job_title }}</span> position. This letter sets out the key terms of the employment. Your responsibilities and duties are detailed in the employment contract.</p>
+       <p>Your joining date is <span class="bold">{{ joining_date }}</span> Please make yourself available at <span class="bold">{{ reporting_time }}</span> IST in our office on that day. Your <span class="bold">CTC</span> (the cost to the company per annum is <span class="bold">INR {{ annual_ctc }} ({{ annual_ctc_words }})</span> take home plus incentive as variable pay. Details are available in the annexure of the employment contract. Your formal appointment letter will be given on the date of your joining. You will be required to sign a <span class="bold">Non-Disclosure Agreement</span> on joining the organization.</p>
+       <p><span class="bold">Salary Reviews:</span> The candidate must complete a minimum of one year from the date of joining to be eligible for salary review. Salary review is strictly done based on individual and company performance only. Your performance will be assessed based on attendance, communication, deliverables, motivation, and teamwork.</p>
+       <p><span class="bold">General working hours</span> for this position are from <span class="bold">{{ work_shift }}</span>, Monday to Friday. The office is closed on Saturday& Sunday. However, the candidate should be available on weekends at the company’s request. You may be eligible for receiving compensatory off for those extra hours spent. You would also be required to be flexible to work in the core EST shift on a need basis.</p>
+       <p><span class="bold">Reporting Head:</span> During your working hours in office, you would be directly reporting to <span class="bold">{{ reporting_manager }}</span></p>
+       <p><span class="bold">Probation:</span> You will be on probation for <span class="bold">{{ probation_period }}</span> from the date of your joining. Your services will be confirmed after successful completion of three months and <span class="bold">subject to your performance and timely evaluation of your work process. The period of probation can be extended at the discretion of the Management, and you will continue to be on probation till an order of confirmation has been issued in writing.</span></p>
+       <p class="bold" style="margin-bottom: 4pt;">Some additional points:</p>
+       <ul class="bullets">
+           <li><span class="bold">Bluebix Solutions Inc.</span>, hold rights to all the intellectual property developed during your employment.</li>
+           <li>All work and discussions are confidential and are not to be discussed or published outside the company, except with an agreement by the Director</li>
+           <li>External work with another party has to be agreed with the Director in writing in advance. Compliance with Bluebix Solutions Inc., non-compete policy in employment contract.</li>
+       </ul>
+       <p class="bold" style="margin-bottom: 4pt;">Termination of Employment:</p>
+       <div class="letter-list">
+           <div class="list-item"><span class="list-num bold">a.</span>Your employment/ services will be governed by Company’s rules and regulations applicable from time to time. If the Company is not satisfied with your performance on any account, the Company reserves the right to terminate your employment with a notice of 15 days or by paying proportionate salary in lieu of any short notice only if you are a confirmed Permanent employee of the organization. This in no way limits the Company’s right to terminate your employment without notice in the event of serious misconduct which include, committing a criminal offence, theft, fraud, embezzlement, intoxication, violence, sexual harassment, damage to the Company’s reputation etc.</div>
+           <div class="list-item" style="margin-bottom: 0;"><span class="list-num bold">b.</span>The Company reserves the right to terminate your services without giving any reasons during probation, not giving any kind of compensation or notice as mentioned in point "a".</div>
+       </div>
+   </div>
+   <div class="footer">
+       <div class="footer-line"></div>
+       <div class="footer-text">Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+   </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page-2">
+   <div class="header">
+       <img src="static/images/logo.png" class="logo" />
+       <img src="static/images/divider.png" class="header-line-img" />
+   </div>
+   <div class="content">
+       <p class="bold" style="margin-bottom: 6pt;">Notice Period:</p>
+       <p>Under normal circumstances the standard Notice period is 30 days and Management has the right to extend the notice period based on the business requirement. Full and Final Settlement is 45 days from the date of relieving. Upon termination /Relieving of employment, you will immediately hand over to the Company all correspondence, specifications, formulae, books, documents, market data, cost data, drawings, effects, or records belonging to the Company or relating to its business and shall not retain or make copies of these items. Upon termination / Relieving of employment, you will also return all company property, which may be in your possession.</p>
+       <p class="bold" style="margin-bottom: 6pt;">Contingencies:</p>
+       <div class="contingency-list">
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Personal Particulars:</span><br/>
+               You will keep us informed of any change in your residential address, your family status or any other relevant particulars. You would also let us know the name and address of your legal heir/nominee.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Nature of Work:</span><br/>
+               You will work at high standard of initiative, creativeness, efficiency and economy in the organization. The nature of work and responsibilities will be assigned and explained to you by your senior from time to time.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Working Hours:</span><br/>
+               The regular working hours of the company are from 6:30 PM to 3:30 AM including 30 minutes for dinner break and 30 minutes for tea break.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Training:</span><br/>
+               You will hold yourself in readiness for any training at any place whenever required. Such training would be imparted to you at the company’s expense. Kindly note that refusal to participate in a training program without any extraneous circumstances would lead to automatic termination of your employment.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Intellectual Property Right:</span><br/>
+               If during the period of your employment with us you achieve any invention, process improvement, operational improvement, or other process/method likely to result in more efficient operation of any of the activities of the company, the company shall be entitled to use, utilize and exploit such improvement and you shall assign all rights thereof to the company for the purpose of seeking any patent rights or for any other purpose. The company shall have the sole ownership rights of all the intellectual property rights that you may create during the tenure of association with the company including but not limited to the creative concept that you may develop during your association with the company.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Secrecy/Confidentiality:</span><br/>
+               You will not during the course of your employment with the company or at any time there after divulge or disclose to any person whom so ever, make any use whatsoever for your own purpose or for any other purpose other than that of the company, of any information or knowledge obtained by you during your employment as to the business or affairs of the company including development, process reports and reporting system and you will during the course of your employment hereunder also use your best endeavor to prevent any other person from doing so.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Restrain: Restriction on Personal Use</span><br/>
+               Use of company resources for personal use is strictly restricted. This includes usage of computer resources, information, internet service, and working time of the company for any personal use.
+           </div>
+           <div class="contingency-item" style="margin-bottom: 0;">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Leave:</span><br/>
+               You will be entitled to leave as per law in force and as laid down in the Standing Orders of the company. Three days’ advance intimation is required to be given for availing leave. In the event of a sick leave, you will be required to furnish a doctor’s certificate for the period of leave. The company follows strict time schedule and late comings are discouraged, unless otherwise notified by you in advance. Late marks will be accorded to you for every late entry with one day of absence counted for every three late marks.
+           </div>
+       </div>
+   </div>
+   <div class="footer">
+       <div class="footer-line"></div>
+       <div class="footer-text">Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+   </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page-3">
+   <div class="header">
+       <img src="static/images/logo.png" class="logo" />
+       <img src="static/images/divider.png" class="header-line-img" />
+   </div>
+   <div class="content">
+       <div class="contingency-list" style="margin-bottom: 0;">
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Security:</span><br/>
+               Security is an important aspect of our communication and office infrastructure. Communication security is maintained by controlling physical access to computer system, disabling all working stations, floppy disk drives and companywide awareness about the need for protection of intellectual property and sensitive customer information.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Termination of Service:</span>
+               <div class="sub-list">
+                   <div class="sub-item"><span class="sub-num">i.</span>Either party can terminate this employment by serving a notice of {{ notice_period }} on the other, save and accept that the company may at its option pay salary in lieu of the notice period to terminate employment with immediate effect.</div>
+                   <div class="sub-item"><span class="sub-num">ii.</span>Unauthorized absence or absence without permission from duty for a continuous period of 3 days would make you lose your lien on employment. In such case your employment shall automatically come to an end without any notice of termination or notice pay.</div>
+                   <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">iii.</span>You will be governed by the laid down code of conduct of the company and if there is any breach of the same or non-conformance of contractual obligation or with the terms and conditions laid down in this agreement, your service can be terminated without any notice; notwithstanding any other terms and conditions stipulated herein the company reserves the right to invoke other legal remedies as it deems fit to protect its legitimate interest.</div>
+               </div>
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Standing Orders:</span><br/>
+               You will abide by the Standing Orders, rules & regulations and service conditions that may be in force or application to the organization or are framed from time to time by the company.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Legal Entity:</span><br/>
+               Bluebix Solutions Inc. is a client Company registered with Petabytz Technologies Pvt. Ltd. You will hereby be receiving any and all official communications from Petabytz Technologies Pvt Ltd.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Appointment in Good Faith:</span><br/>
+               It must be specifically understood that this offer is made based on your proficiency on technical/professional skills you have declared to possess as per your application for employment and your ability to handle any assignment/job independently. In caseat a later date any of your statements/particulars furnished are found to be false or misleading or your performance is not up to the mark or falls short of the minimum standard set by the company, the company shall have the right to terminate your servicesforthwith without giving any notice notwithstanding any other terms and conditions stipulated their in. The above terms and conditions are based on the company’s policy, procedures and other rules currently applicable in India and are subject to amendments and adjustments from time to time. In all matter including those not specifically covered here such as traveling, retirement, etc. you will be governed by the rules of the company as shall be in force from time to time.
+           </div>
+           <div class="contingency-item" style="margin-bottom: 0;">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Non-Compete Clause</span>
+               <div class="sub-list" style="margin-bottom: 0;">
+                   <div class="sub-item"><span class="sub-num">i.</span>The Employee undertakes to the Employer that he/she shall not and shall ensure that none of his/her Affiliates shall, either on his/her own account or in association with others engage or participate directly or indirectly, whether as shareholder, director, partner, proprietor, member, agent, distributor, employee or otherwise, within India or outside India, during the period of his/his employment in whatever capacity with the Employer and for a further period of 1 (One) Year from the date of ceasing to be in such employment, for whatever reasons: In any business which, involves, relates to, or competes with the Employer’s Business;</div>
+                   <div class="sub-item"><span class="sub-num">(a)</span>Establish, develop, carry on or assist in carrying on or be engaged, concerned, interested, or employed in any business enterprise or venture competing with the Employer’s Business:</div>
+                   <div class="sub-item"><span class="sub-num">(b)</span>Solicit, canvas or entice away (or Endeavour to solicit, canvass or entice away) from the Employer’s Business, or from any Affiliate of the Employer, any person, firm or company who was at any time during the period of one year immediately preceding the date of cessation of employment, a client of the Employer’s Business, for the purpose of offering to such client or customer, goods or services similar to or competing with those of the Employer’s Business;</div>
+                   <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">(c)</span>Solicit, canvass or entice away (or endeavor to solicit, canvass or entice away) any of the employees including the senior employees and/or technical or sales and marketing staff from the Employer or from any of its Affiliates, for the purpose of employment in an enterprise or venture competing with the Employer’s Business, whether or not such person would commit a breach of contract by reason of leaving service with the Employer;</div>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="footer">
+       <div class="footer-line"></div>
+       <div class="footer-text">Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+   </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page-4">
+   <div class="header">
+       <img src="static/images/logo.png" class="logo" />
+       <img src="static/images/divider.png" class="header-line-img" />
+   </div>
+   <div class="content">
+       <div class="sub-list" style="margin-left: 0; margin-bottom: 8pt;">
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(d)</span>Solicit, canvass, or entice away (or endeavor to solicit canvass or entice away) any supplier of the Employer or of any of its Affiliates or use its knowledge of or influence over any such supplier to or for its benefit or for the benefit of any other person carrying on business competing with the Employer’s business or with any business of the Employer’s Affiliates;</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">e)</span>Act as an advisor, consultant, trustee, or agent for any third person who is engaged or proposes to start any business which directly or indirectly relates to the Employer’s business or promote, start, engage in or do any business that directly or indirectly relates to the Employer’s Business;</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 0;"><span class="sub-num">(f)</span>Establish after the execution hereof at any future point of time any business or trade undera name that is identical or similar to the Company’s or which in any way suggests any connection with The Company without written consent of the Employer. For the purposes of clarification, it is agreed by the Parties that the obligation, not to use a name which is identical or similar to The Company’s shall not be limited to the term/ period referred to in Section above, in which case this restraint will have effect for an indefinite period.</div>
+       </div>
+       
+       <div class="sub-list" style="margin-left: 0; margin-bottom: 8pt;">
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">ii.</span>Each of the above covenants shall be construed as a separate covenant and if one or more of the covenants is held to be unlawful, the remaining covenants shall continue to bind the Employee and their Affiliates.</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">iii.</span>It is expressly agreed by the Parties hereto that the Employer’s obligations under this Agreement shall include that the Employee shall not directly or indirectly in any manner whatsoever undertake any competing Business through his Relatives. However, this clause shall not be read and understood to constitute a bar on a relative of the Employee acting purely in the capacity of an employee for a competing business. The Employee shall promptly inform the Employer as and when he has knowledge of the fact that any of his Relatives are undertaking or propose to undertake any competing business.</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 0;"><span class="sub-num">iv.</span>For the purpose of this Section, the expression “competing with the Employer’s Business” or Competing Business” shall be deemed to include the following:
+               <div class="sub-sub-list" style="margin-left: 10pt; margin-top: 4pt;">
+                   <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(a)</span>setting up, promoting or investing in a business, venture, activity or company which entails or proposes to compete againstthe business of the Employer by inter alia offering same or similar Service as are offered or proposed to be offered by the Employer and/or its Affiliate.</div>
+                   <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(b)</span>entering into any agreement or arrangement, with any third party which results or is likely to result in making available same or similar services as are offered or proposed to be offered by the Employer and/or its Affiliate;</div>
+                   <div class="sub-item" style="padding-left: 15pt; margin-bottom: 0;"><span class="sub-num">(c)</span>entering into any agreement with any third party for the transfer of business knowledge or information to any third party so as to offer the third party an opportunity to compete with the Service and business of the Employer by inter alia offering same or similar Service as are offered or proposed to be offered by the Employer and/or its Affiliate.</div>
+               </div>
+           </div>
+       </div>
+       
+       <p class="bold" style="margin-bottom: 4pt;">On your joining date, you are requested to produce the following original documents along with the Photocopies for verification:</p>
+       <ul class="bullets" style="margin-bottom: 8pt; margin-left: 15pt;">
+           <li>Updated resume</li>
+           <li>Educational Qualifications from 10<sup>th</sup></li>
+           <li>Pan Card</li>
+           <li>Aadhaar Card</li>
+           <li>Current Address proof</li>
+           <li>2 passport size photos</li>
+       </ul>
+       
+       <p style="margin-bottom: 8pt;">We are sure you will have a rewarding and exciting career with Bluebix Solutions Inc. If you have questions, please do not hesitate to contact us in the signature below. Please send us a signed scan copy of this letter as an acknowledgement of the above offer.</p>
+       
+       <p style="margin-bottom: 4pt;">Sincerely Yours</p>
+       <p class="bold" style="margin-bottom: 0;">For Bluebix Solutions Inc.</p>
+       
+       <div class="signatures-wrapper">
+           <div class="sig-col-left">
+               <img src="{{ sig_ceo_path }}" class="sig-img" />
+               <div class="sig-name-with-img bold">{{ ceo_name }}</div>
+               <div class="sig-title">CEO Founder</div>
+           </div>
+           <div class="sig-col-right">
+               <img src="{{ sig_hr_path }}" class="sig-img" />
+               <div class="sig-name-with-img bold">{{ hr_name }}</div>
+               <div class="sig-title">Human Resource Manager</div>
+           </div>
+       </div>
+   </div>
+   <div class="footer">
+       <div class="footer-line"></div>
+       <div class="footer-text">Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+   </div>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page-5">
+   <div class="header">
+       <img src="static/images/logo.png" class="logo" />
+       <img src="static/images/divider.png" class="header-line-img" />
+   </div>
+   <div class="content">
+       <div class="annexure-title bold center">ANNEXURE</div>
+       
+       <table class="annexure-table">
+           <tr>
+               <td class="bold label-cell">Name</td>
+               <td class="val-cell" colspan="2">{{ candidate_name }}</td>
+           </tr>
+           <tr>
+               <td class="bold label-cell">Employee Id</td>
+               <td class="val-cell" colspan="2">{{ employee_id }}</td>
+           </tr>
+           <tr>
+               <td class="bold label-cell">Designation</td>
+               <td class="val-cell" colspan="2">{{ job_title }}</td>
+           </tr>
+           <tr>
+               <td class="bold label-cell">Department</td>
+               <td class="val-cell" colspan="2">{{ department }}</td>
+           </tr>
+           <tr class="blank-row"><td colspan="3">&nbsp;</td></tr>
+           <tr class="header-row">
+               <td class="bold center" colspan="3">Annexure I</td>
+           </tr>
+           <tr class="header-row">
+               <td class="bold">Salary Components</td>
+               <td class="bold center" style="width: 80pt;">Per Month</td>
+               <td class="bold center" style="width: 80pt;">Per Annum</td>
+           </tr>
+           <tr>
+               <td>Basic</td>
+               <td class="right-align">{{ basic_monthly }}</td>
+               <td class="right-align">{{ basic_annual }}</td>
+           </tr>
+           <tr>
+               <td>HRA</td>
+               <td class="right-align">{{ hra_monthly }}</td>
+               <td class="right-align">{{ hra_annual }}</td>
+           </tr>
+           <tr>
+               <td>Conveyance Allowance</td>
+               <td class="right-align">{{ conveyance_monthly }}</td>
+               <td class="right-align">{{ conveyance_annual }}</td>
+           </tr>
+           <tr>
+               <td>Special Allowance</td>
+               <td class="right-align">{{ special_allowance_monthly }}</td>
+               <td class="right-align">{{ special_allowance_annual }}</td>
+           </tr>
+           <tr class="bold">
+               <td>Gross</td>
+               <td class="right-align">{{ gross_monthly }}</td>
+               <td class="right-align">{{ gross_annual }}</td>
+           </tr>
+           <tr class="bold">
+               <td>Employer Contributions</td>
+               <td>&nbsp;</td>
+               <td>&nbsp;</td>
+           </tr>
+           <tr>
+               <td>Employer PF</td>
+               <td class="right-align">{{ employer_pf_monthly }}</td>
+               <td class="right-align">{{ employer_pf_annual }}</td>
+           </tr>
+           <tr class="blank-row"><td colspan="3">&nbsp;</td></tr>
+           <tr class="bold">
+               <td>Total (A)</td>
+               <td class="right-align">{{ total_a_monthly }}</td>
+               <td class="right-align">{{ total_a_annual }}</td>
+           </tr>
+           <tr class="bold highlight-row">
+               <td>CTC (Cost to company)</td>
+               <td class="right-align">{{ ctc_monthly }}</td>
+               <td class="right-align">{{ ctc_annual }}</td>
+           </tr>
+           <tr>
+               <td>Employee PF</td>
+               <td class="right-align">{{ employee_pf_monthly }}</td>
+               <td class="right-align">{{ employee_pf_annual }}</td>
+           </tr>
+           <tr>
+               <td>Professional tax</td>
+               <td class="right-align">{{ professional_tax_monthly }}</td>
+               <td class="right-align">{{ professional_tax_annual }}</td>
+           </tr>
+           <tr class="blank-row"><td colspan="3">&nbsp;</td></tr>
+           <tr class="bold">
+               <td>Total(B)</td>
+               <td class="right-align">{{ total_b_monthly }}</td>
+               <td class="right-align">{{ total_b_annual }}</td>
+           </tr>
+           <tr class="blank-row"><td colspan="3">&nbsp;</td></tr>
+           <tr class="bold">
+               <td>Total Deductions(A+B)</td>
+               <td class="right-align">{{ total_deductions_monthly }}</td>
+               <td class="right-align">{{ total_deductions_annual }}</td>
+           </tr>
+           <tr class="bold highlight-row">
+               <td>Net Amount</td>
+               <td class="right-align">{{ net_salary_monthly }}</td>
+               <td class="right-align">{{ net_salary_annual }}</td>
+           </tr>
+       </table>
+       
+       <p class="note-text">
+           <span class="bold">Note:</span> Payment of perquisites, allowances and reimbursements shall be subject to provisions of Income Tax and as per company policies as applicable or amended from time to time.
+       </p>
+   </div>
+   <div class="footer">
+       <div class="footer-line"></div>
+       <div class="footer-text">Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+   </div>
+</div>
+
+</body>
+</html>

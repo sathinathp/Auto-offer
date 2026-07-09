@@ -1,0 +1,164 @@
+--- PAGE 1 COLORS ---
+txt='1st Floor I DMR Corporate I Kavuri', color=16777215
+txt='Hills I Madhapur I HYD – 500033', color=16777215
+txt='+91-89779 15322(Ind)', color=16777215
+txt='PRIVATE AND', color=3563409
+txt='CONFIDENTIAL', color=2049658
+txt='Date: 28-October-2025', color=0
+txt='Name: Gampa Usha', color=0
+txt='Location: Hyderabad, Telangana', color=0
+txt='Contact: (M) – 8008809895', color=0
+txt='Subject: Employment Appointment Letter', color=0
+txt='Dear Gampa Usha,', color=0
+txt='We are pleased to extend an offer of employment to you for the position of Business Development', color=0
+txt='Executive- IT Sales at PetaBytz Technology Services Private Limited. This letter outlines the key', color=0
+txt='terms of your employment.', color=0
+txt='Joining Date: Wednesday, 06', color=0
+txt='th', color=0
+txt='October 2025', color=0
+txt='Annual CTC: ₹ 2,40,000 (', color=0
+txt='Two Lakh Forty Thousand Rupees Only', color=0
+txt=')', color=0
+txt='The general terms and conditions governing your employment, compensation, and other benefits', color=0
+txt='are detailed in the enclosed document. We look forward to having you as part of our team and', color=0
+txt='are confident that you will have a successful and rewarding career with our company.', color=0
+txt='General Terms and Conditions of Employment', color=2049658
+txt='Base Location:', color=0
+txt='Your base location will be Hyderabad, DMR Corporate, Kavuri Hills, Madhapur.', color=0
+txt="However, during your employment, you may be posted or transferred to any of the company's", color=0
+txt='offices, projects, divisions, departments, units, or clients at any location in India or abroad, as', color=0
+txt='applicable.', color=0
+txt='Working Hours:', color=0
+txt='The general working hours for this position are from 09:00 AM to 06:00 PM', color=0
+txt="IST (Should also be flexible to work at any time as per the client's needs), Monday to Friday.", color=0
+txt='Flexibility to work outside these hours may be required. The office is closed on Saturdays and', color=0
+txt="Sundays, but you may be required to be available on weekends upon the company's request.", color=0
+txt='Compensatory off may be provided for extra hours worked.', color=0
+txt='Probation:', color=0
+txt='You will be on probation for three months from your joining date. Your services will', color=0
+txt='be confirmed after the successful completion of the probation period, subject to performance', color=0
+txt="evaluation. The probation period may be extended at the management's discretion, and you will", color=0
+txt='remain on probation until a written confirmation is issued.', color=0
+txt='Notice and Termination:', color=0
+txt='The notice period is two months. During the probation period, your', color=0
+txt='services may be terminated at any time without notice, pay, or advance intimation. Reasons for', color=0
+txt='termination include, but are not limited to, theft, harassment, absconding from duties,', color=0
+txt='inaccessibility during office working hours, frequent leaves, and low productivity.', color=0
+--- PAGE 2 COLORS ---
+txt='1st Floor I DMR Corporate I Kavuri', color=16777215
+txt='Hills I Madhapur I HYD – 500033', color=16777215
+txt='+91-89779 15322(Ind)', color=16777215
+txt='After successful completion of the probation period, your services may be terminated by giving', color=0
+txt="two weeks' notice or two weeks' salary in lieu thereof. Upon termination of employment, you are", color=0
+txt='required to immediately hand over to the Company all correspondence, specifications, formulae,', color=0
+txt='books, documents, market data, cost data, drawings, effects, or records belonging to the', color=0
+txt='Company or relating to its business. You shall not retain or make copies of these items.', color=0
+txt='Additionally, you must return all company property in your possession upon termination of', color=0
+txt='employment.', color=0
+txt='Please note that salary information is confidential and should not be discussed with colleagues or', color=0
+txt='within the Company. Breaching this policy will be considered a violation of Company Policy.', color=0
+txt='Performance Appraisal', color=5210554
+txt='Your performance will be continuously monitored throughout your tenure with PetaBytz', color=0
+txt='Technology Services Private Limited. A formal performance appraisal will be conducted during', color=0
+txt='the standard appraisal cycle, which typically occurs annually.', color=0
+txt='The performance appraisal process involves evaluating your job performance against predefined', color=0
+txt='goals and objectives. This evaluation will consider various factors, such as your job knowledge,', color=0
+txt='quality of work, productivity, teamwork, communication skills, and adherence to company', color=0
+txt='policies and procedures.', color=0
+txt='During the appraisal process, you will have an opportunity to discuss your achievements,', color=0
+txt='challenges, and career aspirations with your manager. Constructive feedback will be provided to', color=0
+txt='help you improve your performance and achieve your professional goals.', color=0
+txt='Based on the results of the performance appraisal, decisions regarding salary adjustments,', color=0
+txt='promotions, bonuses, and other rewards will be made. It is important to actively participate in the', color=0
+txt='appraisal process and work towards continuous improvement.', color=0
+txt='Confidentiality and Data Protection', color=5210554
+txt='As an employee of PetaBytz Technology Services Private Limited, you will have access to', color=0
+txt='confidential information that is essential to our business operations. This information includes but', color=0
+txt='is not limited to trade secrets, proprietary data, customer lists, financial information, marketing', color=0
+txt='strategies, product development plans, and other sensitive information.', color=0
+txt='You are required to maintain the confidentiality of all such information during and after your', color=0
+txt='employment with the company. You must not disclose any confidential information to any third', color=0
+txt='party without prior written consent from the company. Additionally, you must take all necessary', color=0
+txt='precautions to protect the confidentiality of this information and prevent unauthorized access or', color=0
+txt='disclosure.', color=0
+txt='In accordance with data protection laws and regulations, you must ensure that any personal data', color=0
+txt='you handle as part of your job responsibilities is processed lawfully, fairly, and transparently. You', color=0
+--- PAGE 3 COLORS ---
+txt='1st Floor I DMR Corporate I Kavuri', color=16777215
+txt='Hills I Madhapur I HYD – 500033', color=16777215
+txt='+91-89779 15322(Ind)', color=16777215
+txt='must only collect and use personal data for legitimate business purposes and ensure that it is kept', color=0
+txt='secure at all times. Any breach of confidentiality or data protection policies will be treated as a', color=0
+txt='serious disciplinary matter and may result in termination of employment and legal action.', color=0
+txt='Declaration', color=5210554
+txt='I have read and accept all the terms and conditions of this offer and the enclosed annexure. I', color=0
+txt='confirm that I am not entitled to any other benefits unless specifically agreed in writing by the', color=0
+txt='company.', color=0
+txt='Best Regards,', color=0
+txt='Gampa Usha', color=0
+txt='Business Development Executive - IT Sales', color=0
+txt='Hyderabad', color=0
+--- PAGE 4 COLORS ---
+txt='1st Floor I DMR Corporate I Kavuri', color=16777215
+txt='Hills I Madhapur I HYD – 500033', color=16777215
+txt='+91-89779 15322(Ind)', color=16777215
+txt='Annexure', color=2049658
+txt='Employee Name', color=0
+txt='Gampa Usha', color=0
+txt='Employee Id', color=0
+txt='PBTHYD0302', color=0
+txt='Designation', color=0
+txt='Business Development Executive- IT Sales', color=0
+txt='Department', color=0
+txt='Sales & Marketing', color=0
+txt='Annexure I', color=0
+txt='Salary Components', color=0
+txt='Per Month', color=0
+txt='Per Annum', color=0
+txt='Basic', color=0
+txt='10,000', color=0
+txt='120,000', color=0
+txt='HRA', color=0
+txt='4,000', color=0
+txt='48,000', color=0
+txt='LTA', color=0
+txt='2,000', color=0
+txt='24,000', color=0
+txt='Other Allowance', color=0
+txt='4,000', color=0
+txt='48,000', color=0
+txt='Gross', color=0
+txt='20,000', color=0
+txt='240,000', color=0
+txt='Employer Contributions', color=0
+txt='Employer PF', color=0
+txt='0', color=0
+txt='0', color=0
+txt='Total (A)', color=0
+txt='0', color=0
+txt='0', color=0
+txt='CTC (Cost to company)', color=0
+txt='20,000', color=0
+txt='240,000', color=0
+txt='Employee PF', color=0
+txt='0', color=0
+txt='0', color=0
+txt='Professional tax', color=0
+txt='150', color=0
+txt='1,800', color=0
+txt='Total(B)', color=0
+txt='150', color=0
+txt='1,800', color=0
+txt='Total Deductions(A+B)', color=0
+txt='150', color=0
+txt='1800', color=0
+txt='Net Amount', color=0
+txt='19,850', color=0
+txt='238,200', color=0
+txt='(Two Lakh Forty Thousand Rupees Only)', color=0
+txt='Note: Payment of perquisites, allowances, and reimbursements is subject to Income Tax', color=0
+txt='provisions and company policies.', color=0
+txt='Sanjay Kumar', color=0
+txt='Employee Signature:', color=0
+txt='CEO', color=0
+txt='Email: Sanjay.kumar@petabytz.com', color=0
