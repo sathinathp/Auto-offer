@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libcairo2 \
     libffi-dev \
     shared-mime-info \
-    mime-support \
+    media-types \
+    mailcap \
     fonts-dejavu \
     fontconfig \
     && rm -rf /var/lib/apt/lists/*
