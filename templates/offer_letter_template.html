@@ -333,7 +333,7 @@ ul.bullets li {
            <span class="right">{{ offer_date }}</span>
        </div>
        <p class="candidate-address">
-           Ms. <span class="bold">{{ candidate_name }}</span>,<br/>
+           {{ candidate_prefix }} <span class="bold">{{ candidate_name }}</span>,<br/>
            {{ mobile_number }}
        </p>
        <p class="subject bold center">Sub: Employment Offer</p>
@@ -346,9 +346,9 @@ ul.bullets li {
        <p><span class="bold">Probation:</span> You will be on probation for <span class="bold">{{ probation_period }}</span> from the date of your joining. Your services will be confirmed after successful completion of three months and <span class="bold">subject to your performance and timely evaluation of your work process. The period of probation can be extended at the discretion of the Management, and you will continue to be on probation till an order of confirmation has been issued in writing.</span></p>
        <p class="bold" style="margin-bottom: 4pt;">Some additional points:</p>
        <ul class="bullets">
-           <li><span class="bold">Bluebix Solutions Inc.</span>, hold rights to all the intellectual property developed during your employment.</li>
+           <li><span class="bold">{{ company_name }}</span>, hold rights to all the intellectual property developed during your employment.</li>
            <li>All work and discussions are confidential and are not to be discussed or published outside the company, except with an agreement by the Director</li>
-           <li>External work with another party has to be agreed with the Director in writing in advance. Compliance with Bluebix Solutions Inc., non-compete policy in employment contract.</li>
+           <li>External work with another party has to be agreed with the Director in writing in advance. Compliance with {{ company_name }}, non-compete policy in employment contract.</li>
        </ul>
        <p class="bold" style="margin-bottom: 4pt;">Termination of Employment:</p>
        <div class="letter-list">
@@ -451,7 +451,7 @@ ul.bullets li {
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
                <span class="bold">Legal Entity:</span><br/>
-               Bluebix Solutions Inc. is a client Company registered with Petabytz Technologies Pvt. Ltd. You will hereby be receiving any and all official communications from Petabytz Technologies Pvt Ltd.
+               {{ company_name }} is a client Company registered with Petabytz Technologies Pvt. Ltd. You will hereby be receiving any and all official communications from Petabytz Technologies Pvt Ltd.
            </div>
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
@@ -511,10 +511,10 @@ ul.bullets li {
            <li>2 passport size photos</li>
        </ul>
        
-       <p style="margin-bottom: 8pt;">We are sure you will have a rewarding and exciting career with Bluebix Solutions Inc. If you have questions, please do not hesitate to contact us in the signature below. Please send us a signed scan copy of this letter as an acknowledgement of the above offer.</p>
+       <p style="margin-bottom: 8pt;">We are sure you will have a rewarding and exciting career with {{ company_name }} If you have questions, please do not hesitate to contact us in the signature below. Please send us a signed scan copy of this letter as an acknowledgement of the above offer.</p>
        
        <p style="margin-bottom: 4pt;">Sincerely Yours</p>
-       <p class="bold" style="margin-bottom: 0;">For Bluebix Solutions Inc.</p>
+       <p class="bold" style="margin-bottom: 0;">For {{ company_name }}</p>
        
        <div class="signatures-wrapper">
            <div class="sig-col-left">
