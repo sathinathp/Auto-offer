@@ -338,12 +338,12 @@ ul.bullets li {
        </p>
        <p class="subject bold center">Sub: Employment Offer</p>
        <p>Dear <span class="bold">{{ candidate_name }}</span>,</p>
-       <p>Subsequent to the discussions that you had with request to your internal movement within the organization, we are pleased to extend an offer of employment to you from <span class="bold">{{ company_name }}</span> as a <span class="bold">{{ job_title }}</span> position. This letter sets out the key terms of the employment. Your responsibilities and duties are detailed in the employment contract.</p>
-       <p>Your joining date is <span class="bold">{{ joining_date }}</span> Please make yourself available at <span class="bold">{{ reporting_time }}</span> IST in our office on that day. Your <span class="bold">CTC</span> (the cost to the company per annum is <span class="bold">INR {{ annual_ctc }} ({{ annual_ctc_words }})</span> take home plus incentive as variable pay. Details are available in the annexure of the employment contract. Your formal appointment letter will be given on the date of your joining. You will be required to sign a <span class="bold">Non-Disclosure Agreement</span> on joining the organization.</p>
+       <p>{{ text_intro }}</p>
+       <p>{{ text_joining }}</p>
        <p><span class="bold">Salary Reviews:</span> The candidate must complete a minimum of one year from the date of joining to be eligible for salary review. Salary review is strictly done based on individual and company performance only. Your performance will be assessed based on attendance, communication, deliverables, motivation, and teamwork.</p>
-       <p><span class="bold">General working hours</span> for this position are from <span class="bold">{{ work_shift }}</span>, Monday to Friday. The office is closed on Saturday& Sunday. However, the candidate should be available on weekends at the company’s request. You may be eligible for receiving compensatory off for those extra hours spent. You would also be required to be flexible to work in the core EST shift on a need basis.</p>
+       <p>{{ text_working_hours }}</p>
        <p><span class="bold">Reporting Head:</span> During your working hours in office, you would be directly reporting to <span class="bold">{{ reporting_manager }}</span></p>
-       <p><span class="bold">Probation:</span> You will be on probation for <span class="bold">{{ probation_period }}</span> from the date of your joining. Your services will be confirmed after successful completion of three months and <span class="bold">subject to your performance and timely evaluation of your work process. The period of probation can be extended at the discretion of the Management, and you will continue to be on probation till an order of confirmation has been issued in writing.</span></p>
+       <p>{{ text_probation }}</p>
        <p class="bold" style="margin-bottom: 4pt;">Some additional points:</p>
        <ul class="bullets">
            <li><span class="bold">{{ company_name }}</span>, hold rights to all the intellectual property developed during your employment.</li>
@@ -352,8 +352,8 @@ ul.bullets li {
        </ul>
        <p class="bold" style="margin-bottom: 4pt;">Termination of Employment:</p>
        <div class="letter-list">
-           <div class="list-item"><span class="list-num bold">a.</span>Your employment/ services will be governed by Company’s rules and regulations applicable from time to time. If the Company is not satisfied with your performance on any account, the Company reserves the right to terminate your employment with a notice of 15 days or by paying proportionate salary in lieu of any short notice only if you are a confirmed Permanent employee of the organization. This in no way limits the Company’s right to terminate your employment without notice in the event of serious misconduct which include, committing a criminal offence, theft, fraud, embezzlement, intoxication, violence, sexual harassment, damage to the Company’s reputation etc.</div>
-           <div class="list-item" style="margin-bottom: 0;"><span class="list-num bold">b.</span>The Company reserves the right to terminate your services without giving any reasons during probation, not giving any kind of compensation or notice as mentioned in point "a".</div>
+           <div class="list-item"><span class="list-num bold">a.</span>{{ text_termination_a }}</div>
+           <div class="list-item" style="margin-bottom: 0;"><span class="list-num bold">b.</span>{{ text_termination_b }}</div>
        </div>
    </div>
    <div class="footer">
@@ -451,8 +451,8 @@ ul.bullets li {
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
                <span class="bold">Legal Entity:</span><br/>
-               {{ company_name }} is a client Company registered with Petabytz Technologies Pvt. Ltd. You will hereby be receiving any and all official communications from Petabytz Technologies Pvt Ltd.
-           </div>
+                {{ text_contingency }}
+            </div>
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
                <span class="bold">Appointment in Good Faith:</span><br/>
@@ -511,7 +511,7 @@ ul.bullets li {
            <li>2 passport size photos</li>
        </ul>
        
-       <p style="margin-bottom: 8pt;">We are sure you will have a rewarding and exciting career with {{ company_name }} If you have questions, please do not hesitate to contact us in the signature below. Please send us a signed scan copy of this letter as an acknowledgement of the above offer.</p>
+       <p style="margin-bottom: 8pt;">{{ text_closing }}</p>
        
        <p style="margin-bottom: 4pt;">Sincerely Yours</p>
        <p class="bold" style="margin-bottom: 0;">For {{ company_name }}</p>
