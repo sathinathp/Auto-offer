@@ -45,12 +45,12 @@ body {
        </p>
        <p class="subject bold center">Sub: Employment Offer</p>
        <p>Dear <span class="bold">{{ candidate_name }}</span>,</p>
-       <p>{{ text_intro }}</p>
-       <p>{{ text_joining }}</p>
+       <p>{{ text_intro | safe }}</p>
+       <p>{{ text_joining | safe }}</p>
        <p><span class="bold">Salary Reviews:</span> The candidate must complete a minimum of one year from the date of joining to be eligible for salary review. Salary review is strictly done based on individual and company performance only. Your performance will be assessed based on attendance, communication, deliverables, motivation, and teamwork.</p>
-       <p>{{ text_working_hours }}</p>
+       <p>{{ text_working_hours | safe }}</p>
        <p><span class="bold">Reporting Head:</span> During your working hours in office, you would be directly reporting to <span class="bold">{{ reporting_manager }}</span></p>
-       <p>{{ text_probation }}</p>
+       <p>{{ text_probation | safe }}</p>
        <p class="bold" style="margin-bottom: 4pt;">Some additional points:</p>
        <ul class="bullets">
            <li><span class="bold">{{ company_name }}</span>, hold rights to all the intellectual property developed during your employment.</li>
@@ -59,8 +59,8 @@ body {
        </ul>
        <p class="bold" style="margin-bottom: 4pt;">Termination of Employment:</p>
        <div class="letter-list">
-           <div class="list-item"><span class="list-num bold">a.</span>{{ text_termination_a }}</div>
-           <div class="list-item" style="margin-bottom: 0;"><span class="list-num bold">b.</span>{{ text_termination_b }}</div>
+           <div class="list-item"><span class="list-num bold">a.</span>{{ text_termination_a | safe }}</div>
+           <div class="list-item" style="margin-bottom: 0;"><span class="list-num bold">b.</span>{{ text_termination_b | safe }}</div>
        </div>
    </div>
    <div class="footer">
@@ -158,7 +158,7 @@ body {
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
                <span class="bold">Legal Entity:</span><br/>
-                {{ text_contingency }}
+                {{ text_contingency | safe }}
             </div>
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
@@ -218,7 +218,7 @@ body {
            <li>2 passport size photos</li>
        </ul>
        
-       <p style="margin-bottom: 8pt;">{{ text_closing }}</p>
+       <p style="margin-bottom: 8pt;">{{ text_closing | safe }}</p>
        
        <p style="margin-bottom: 4pt;">Sincerely Yours</p>
        <p class="bold" style="margin-bottom: 0;">For {{ company_name }}</p>
