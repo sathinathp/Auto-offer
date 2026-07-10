@@ -41,7 +41,7 @@ def split_template(src_html_path, dest_html_path, dest_css_path):
     print(f"Created CSS: {dest_css_path}")
 
     # Replace <style>...</style> in HTML with link to CSS and the preview_css
-    link_tag = f'<link rel="stylesheet" href="/static/css/{os.path.basename(dest_css_path)}">'
+    link_tag = f'<link rel="stylesheet" href="static/css/{os.path.basename(dest_css_path)}">'
     if preview_css:
         replacement = f'{link_tag}\n<style>\n{preview_css}\n</style>'
     else:

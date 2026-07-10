@@ -531,6 +531,7 @@
         <button class="tab-btn" onclick="switchTab('tab-terms')">Job Terms</button>
         <button class="tab-btn" onclick="switchTab('tab-salary')">Salary Table</button>
         <button class="tab-btn" onclick="switchTab('tab-sign')">Signatories</button>
+        <button class="tab-btn" onclick="switchTab('tab-wording')">Letter Wording</button>
       </div>
 
       <!-- Hidden Form for Preview generation -->
@@ -831,6 +832,12 @@
             </div>
           </div>
 
+          <!-- BLUEBIX TAB 5: WORDING -->
+          <div class="tab-pane" id="tab-wording" style="display:none;">
+            <h3 class="form-section-title">Edit Letter Wording</h3>
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">Dynamic paragraph wording is only configured for the PetaBytz template. Switch to PetaBytz to edit paragraphs in real time.</p>
+          </div>
+
           <!-- ========== PETABYTZ PANES (hidden by default) ========== -->
 
           <!-- PBT TAB 1: CANDIDATE -->
@@ -984,6 +991,51 @@
                 <input type="file" name="pbt_sig_ceo_upload" id="pbt_sig_ceo_upload" accept="image/png" onchange="updateFileName(this, 'pbt-label-sig-ceo')">
               </div>
               <input type="hidden" name="pbt_sig_ceo_path" value="static/images/petabytz/img_44.png">
+            </div>
+          </div>
+
+          <!-- PBT TAB 5: WORDING -->
+          <div class="tab-pane" id="pbt-tab-wording" style="display:none;">
+            <h3 class="form-section-title">Edit Letter Wording</h3>
+            <div class="form-group">
+              <label for="pbt_text_base_location">Base Location Paragraph</label>
+              <textarea id="pbt_text_base_location" name="pbt_text_base_location" rows="3" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);"><strong>Base Location:</strong> Your base location will be Hyderabad, DMR Corporate, Kavuri Hills, Madhapur.<br>However, during your employment, you may be posted or transferred to any of the company's<br>offices, projects, divisions, departments, units, or clients at any location in India or abroad, as<br>applicable.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_working_hours">Working Hours Paragraph</label>
+              <textarea id="pbt_text_working_hours" name="pbt_text_working_hours" rows="4" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);"><strong>Working Hours:</strong> The general working hours for this position are from 09:00 AM to 06:00 PM<br>IST (Should also be flexible to work at any time as per the client's needs), Monday to Friday.<br>Flexibility to work outside these hours may be required. The office is closed on Saturdays and<br>Sundays, but you may be required to be available on weekends upon the company's request.<br>Compensatory off may be provided for extra hours worked.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_probation">Probation Paragraph</label>
+              <textarea id="pbt_text_probation" name="pbt_text_probation" rows="4" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);"><strong>Probation:</strong> You will be on probation for three months from your joining date. Your services will<br>be confirmed after the successful completion of the probation period, subject to performance<br>evaluation. The probation period may be extended at the management's discretion, and you will<br>remain on probation until a written confirmation is issued.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_notice_termination">Notice and Termination Paragraph</label>
+              <textarea id="pbt_text_notice_termination" name="pbt_text_notice_termination" rows="4" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);"><strong>Notice and Termination:</strong> The notice period is two months. During the probation period, your services may be terminated at any time without notice, pay, or advance intimation. Reasons for termination include, but are not limited to, theft, harassment, absconding from duties, inaccessibility during office working hours, frequent leaves, and low productivity.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_termination_details">Termination Details Paragraph</label>
+              <textarea id="pbt_text_termination_details" name="pbt_text_termination_details" rows="5" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);">After successful completion of the probation period, your services may be terminated by giving<br>two weeks' notice or two weeks' salary in lieu thereof. Upon termination of employment, you are<br>required to immediately hand over to the Company all correspondence, specifications, formulae,<br>books, documents, market data, cost data, drawings, effects, or records belonging to the<br>Company or relating to its business. You shall not retain or make copies of these items.<br>Additionally, you must return all company property in your possession upon termination of<br>employment.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_confidentiality_policy">Salary Confidentiality Policy</label>
+              <textarea id="pbt_text_confidentiality_policy" name="pbt_text_confidentiality_policy" rows="3" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);">Please note that salary information is confidential and should not be discussed with colleagues or<br>within the Company. Breaching this policy will be considered a violation of Company Policy.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_confidentiality_1">Access to Confidential Info</label>
+              <textarea id="pbt_text_confidentiality_1" name="pbt_text_confidentiality_1" rows="4" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);">As an employee of PetaBytz Technology Services Private Limited, you will have access to<br>    confidential information that is essential to our business operations. This information includes but<br>    is not limited to trade secrets, proprietary data, customer lists, financial information, marketing<br>    strategies, product development plans, and other sensitive information.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_confidentiality_2">Confidentiality Terms</label>
+              <textarea id="pbt_text_confidentiality_2" name="pbt_text_confidentiality_2" rows="4" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);">You are required to maintain the confidentiality of all such information during and after your<br>    employment with the company. You must not disclose any confidential information to any third<br>    party without prior written consent from the company. Additionally, you must take all necessary<br>    precautions to protect the confidentiality of this information and prevent unauthorized access or<br>    disclosure.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_data_protection">Data Protection Policy</label>
+              <textarea id="pbt_text_data_protection" name="pbt_text_data_protection" rows="4" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);">In accordance with data protection laws and regulations, you must ensure that any personal data you handle as part of your job responsibilities is processed lawfully, fairly, and transparently. You must only collect and use personal data for legitimate business purposes and ensure that it is kept secure at all times. Any breach of confidentiality or data protection policies will be treated as a serious disciplinary matter and may result in termination of employment and legal action.</textarea>
+            </div>
+            <div class="form-group">
+              <label for="pbt_text_declaration">Declaration Statement</label>
+              <textarea id="pbt_text_declaration" name="pbt_text_declaration" rows="3" style="font-family:monospace; font-size:11px; background:rgba(0,0,0,0.5);">I have read and accept all the terms and conditions of this offer and the enclosed annexure. I confirm that I am not entitled to any other benefits unless specifically agreed in writing by the company.</textarea>
             </div>
           </div>
 
@@ -1182,6 +1234,12 @@
               </div>
               <input type="hidden" name="sss_sig_hr_path" value="static/images/softstandard/sig_hr.png">
             </div>
+          </div>
+
+          <!-- SSS TAB 5: WORDING -->
+          <div class="tab-pane" id="sss-tab-wording" style="display:none;">
+            <h3 class="form-section-title">Edit Letter Wording</h3>
+            <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">Dynamic paragraph wording is only configured for the PetaBytz template. Switch to PetaBytz to edit paragraphs in real time.</p>
           </div>
         </div>
 
@@ -1544,7 +1602,7 @@
     });
 
     // Form live preview on change of any text fields
-    document.querySelectorAll('input[type="text"], input[type="number"], select').forEach(element => {
+    document.querySelectorAll('input[type="text"], input[type="number"], select, textarea').forEach(element => {
       element.addEventListener('change', function(e) {
         if (e.target.id !== 'annual_ctc_input' && e.target.id !== 'pbt_annual_ctc_input' && e.target.id !== 'sss_annual_ctc_input') {
           triggerSubmit();
@@ -1588,10 +1646,10 @@
     // ============================================================
     let currentCompany = 'bluebix';
 
-    const BLUEBIX_TABS = ['tab-candidate', 'tab-terms', 'tab-salary', 'tab-sign'];
-    const PBT_TABS     = ['pbt-tab-candidate', 'pbt-tab-terms', 'pbt-tab-salary', 'pbt-tab-sign'];
-    const SSS_TABS     = ['sss-tab-candidate', 'sss-tab-terms', 'sss-tab-salary', 'sss-tab-sign'];
-    const TAB_LABELS   = ['Candidate', 'Job Terms', 'Salary Table', 'Signatories'];
+    const BLUEBIX_TABS = ['tab-candidate', 'tab-terms', 'tab-salary', 'tab-sign', 'tab-wording'];
+    const PBT_TABS     = ['pbt-tab-candidate', 'pbt-tab-terms', 'pbt-tab-salary', 'pbt-tab-sign', 'pbt-tab-wording'];
+    const SSS_TABS     = ['sss-tab-candidate', 'sss-tab-terms', 'sss-tab-salary', 'sss-tab-sign', 'sss-tab-wording'];
+    const TAB_LABELS   = ['Candidate', 'Job Terms', 'Salary Table', 'Signatories', 'Letter Wording'];
 
     function switchCompany(company) {
       currentCompany = company;
@@ -1745,6 +1803,28 @@
 
     // Initial readOnly for pbt calc fields
     document.querySelectorAll('.pbt-calc-field').forEach(inp => inp.readOnly = true);
+
+    // Sync Job Terms inputs with wording textareas
+    document.getElementById('pbt_work_shift').addEventListener('change', function() {
+      const shift = this.value;
+      const textarea = document.getElementById('pbt_text_working_hours');
+      textarea.value = `<strong>Working Hours:</strong> The general working hours for this position are from ${shift}<br>IST (Should also be flexible to work at any time as per the client's needs), Monday to Friday.<br>Flexibility to work outside these hours may be required. The office is closed on Saturdays and<br>Sundays, but you may be required to be available on weekends upon the company's request.<br>Compensatory off may be provided for extra hours worked.`;
+      triggerSubmit();
+    });
+
+    document.getElementById('pbt_probation_period').addEventListener('change', function() {
+      const probation = this.value;
+      const textarea = document.getElementById('pbt_text_probation');
+      textarea.value = `<strong>Probation:</strong> You will be on probation for ${probation} from your joining date. Your services will<br>be confirmed after the successful completion of the probation period, subject to performance<br>evaluation. The probation period may be extended at the management's discretion, and you will<br>remain on probation until a written confirmation is issued.`;
+      triggerSubmit();
+    });
+
+    document.getElementById('pbt_notice_period').addEventListener('change', function() {
+      const notice = this.value;
+      const textarea = document.getElementById('pbt_text_notice_termination');
+      textarea.value = `<strong>Notice and Termination:</strong> The notice period is ${notice}. During the probation period, your services may be terminated at any time without notice, pay, or advance intimation. Reasons for termination include, but are not limited to, theft, harassment, absconding from duties, inaccessibility during office working hours, frequent leaves, and low productivity.`;
+      triggerSubmit();
+    });
 
     // ============================================================
     // SOFTSTANDARD SALARY CALCULATION

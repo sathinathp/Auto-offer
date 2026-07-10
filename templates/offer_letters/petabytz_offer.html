@@ -39,7 +39,7 @@ body {
     </svg>
 
     <!-- Logo (img_7.png) -->
-    <img src="static/images/petabytz/img_7.png" style="position: absolute; top: 48pt; left: 59.75pt; height: 62pt; width: auto; display: block;">
+    <img src="static/images/petabytz/img_7.png" style="position: absolute; top: 40pt; left: 59.75pt; height: 74pt; width: auto; display: block;">
 
     <!-- Watermark (only pages 1, 2, 3) -->
     {% if not is_page_4 %}
@@ -66,7 +66,7 @@ body {
       <circle cx="12" cy="12" r="11" fill="#ffffff" />
       <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="#000000" transform="scale(0.65) translate(6.5, 6.5)" />
     </svg>
-    <div style="position: absolute; top: 817.46pt; left: 220.17pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; color: #ffffff; line-height: 1;">
+    <div style="position: absolute; top: 817.46pt; left: 220.17pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; color: #ffffff; line-height: 1;">
       www.petabytz.com
     </div>
     <svg style="position: absolute; top: 809.95pt; left: 365.02pt; width: 18.09pt; height: 18.08pt;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -75,10 +75,10 @@ body {
     </svg>
 
     <!-- Footer text -->
-    <div style="position: absolute; top: 817.46pt; left: 64.82pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; color: #ffffff; line-height: 1;">
+    <div style="position: absolute; top: 817.46pt; left: 64.82pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; color: #ffffff; line-height: 1;">
       +91-89779 15322(Ind)
     </div>
-    <div style="position: absolute; top: 807.46pt; left: 396.73pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; color: #ffffff; line-height: 1.32;">
+    <div style="position: absolute; top: 807.46pt; left: 396.73pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; color: #ffffff; line-height: 1.32;">
       1st Floor I DMR Corporate I Kavuri<br>
       Hills I Madhapur I HYD – 500033
     </div>
@@ -91,7 +91,7 @@ body {
 
   <div class="pc-head">PRIVATE AND <span>CONFIDENTIAL</span></div>
 
-  <div style="margin-bottom: 10pt;">
+  <div style="margin-bottom: 14pt;">
     Date: <strong>{{ offer_date }}</strong>
   </div>
 
@@ -101,27 +101,27 @@ body {
     Contact: (M) &ndash; {{ mobile_number }}
   </div>
 
-  <div style="margin-bottom: 8pt;">
+  <div style="margin-bottom: 12pt;">
     Subject: Employment Appointment Letter
   </div>
 
-  <div style="margin-bottom: 9pt;">
+  <div style="margin-bottom: 12pt;">
     Dear {{ candidate_name }},
   </div>
 
-  <p style="margin-bottom: 14pt; text-align: justify;">
+  <p style="margin-bottom: 18pt; text-align: justify;">
     We are pleased to extend an offer of employment to you for the position of {{ job_title }} at <strong>PetaBytz Technology Services Private Limited</strong>. This letter outlines the key terms of your employment.
   </p>
 
-  <p style="margin-bottom: 10pt;">
+  <p style="margin-bottom: 14pt;">
     <strong>Joining Date: {{ joining_date }}</strong>
   </p>
 
-  <p style="margin-bottom: 10pt;">
+  <p style="margin-bottom: 14pt;">
     <strong>Annual CTC: ₹ {{ annual_ctc }} ({{ annual_ctc_words }} )</strong>
   </p>
 
-  <p style="margin-bottom: 13pt; text-align: justify;">
+  <p style="margin-bottom: 18pt; text-align: justify;">
     The general terms and conditions governing your employment, compensation, and other benefits<br>are detailed in the enclosed document. We look forward to having you as part of our team and<br>are confident that you will have a successful and rewarding career with our company.
   </p>
 
@@ -129,20 +129,16 @@ body {
     General Terms and Conditions of Employment
   </div>
 
-  <p style="margin-bottom: 9pt; text-align: justify;">
-    <strong>Base Location:</strong> Your base location will be Hyderabad, DMR Corporate, Kavuri Hills, Madhapur.<br>However, during your employment, you may be posted or transferred to any of the company's<br>offices, projects, divisions, departments, units, or clients at any location in India or abroad, as<br>applicable.
+  <p style="margin-bottom: 12pt; text-align: justify;">
+    {{ text_base_location | safe }}
   </p>
 
-  <p style="margin-bottom: 9pt; text-align: justify;">
-    <strong>Working Hours:</strong> The general working hours for this position are from {{ work_shift }}<br>IST (Should also be flexible to work at any time as per the client's needs), Monday to Friday.<br>Flexibility to work outside these hours may be required. The office is closed on Saturdays and<br>Sundays, but you may be required to be available on weekends upon the company's request.<br>Compensatory off may be provided for extra hours worked.
-  </p>
-
-  <p style="margin-bottom: 13pt; text-align: justify;">
-    <strong>Probation:</strong> You will be on probation for {{ probation_period }} from your joining date. Your services will<br>be confirmed after the successful completion of the probation period, subject to performance<br>evaluation. The probation period may be extended at the management's discretion, and you will<br>remain on probation until a written confirmation is issued.
+  <p style="margin-bottom: 12pt; text-align: justify;">
+    {{ text_working_hours | safe }}
   </p>
 
   <p style="margin-bottom: 0; text-align: justify;">
-    <strong>Notice and Termination:</strong> The notice period is {{ notice_period }}. During the probation period, your services may be terminated at any time without notice, pay, or advance intimation. Reasons for termination include, but are not limited to, theft, harassment, absconding from duties, inaccessibility during office working hours, frequent leaves, and low productivity.
+    {{ text_probation | safe }}
   </p>
 </div>
 
@@ -150,23 +146,27 @@ body {
 <div class="page" id="page-2">
   {{ bg_layer(is_page_4=false) }}
 
-  <p style="margin-bottom: 9pt; text-align: justify;">
-    After successful completion of the probation period, your services may be terminated by giving<br>two weeks' notice or two weeks' salary in lieu thereof. Upon termination of employment, you are<br>required to immediately hand over to the Company all correspondence, specifications, formulae,<br>books, documents, market data, cost data, drawings, effects, or records belonging to the<br>Company or relating to its business. You shall not retain or make copies of these items.<br>Additionally, you must return all company property in your possession upon termination of<br>employment.
+  <p style="margin-bottom: 12pt; text-align: justify;">
+    {{ text_notice_termination | safe }}
   </p>
 
   <p style="margin-bottom: 12pt; text-align: justify;">
-    Please note that salary information is confidential and should not be discussed with colleagues or<br>within the Company. Breaching this policy will be considered a violation of Company Policy.
+    {{ text_termination_details | safe }}
   </p>
 
-  <div class="sec-heading-p23" style="margin-bottom: 3pt;">
+  <p style="margin-bottom: 16pt; text-align: justify;">
+    {{ text_confidentiality_policy | safe }}
+  </p>
+
+  <div class="sec-heading-p23" style="margin-bottom: 6pt;">
     Performance Appraisal
   </div>
 
-  <p style="margin-bottom: 9pt; text-align: justify;">
+  <p style="margin-bottom: 12pt; text-align: justify;">
     Your performance will be continuously monitored throughout your tenure with PetaBytz<br>Technology Services Private Limited. A formal performance appraisal will be conducted during<br>the standard appraisal cycle, which typically occurs annually.
   </p>
 
-  <p style="margin-bottom: 9pt; text-align: justify;">
+  <p style="margin-bottom: 12pt; text-align: justify;">
     The performance appraisal process involves evaluating your job performance against predefined<br>    goals and objectives. This evaluation will consider various factors, such as your job knowledge,<br>    quality of work, productivity, teamwork, communication skills, and adherence to company<br>    policies and procedures.
   </p>
 
@@ -174,24 +174,8 @@ body {
     During the appraisal process, you will have an opportunity to discuss your achievements, challenges, and career aspirations with your manager. Constructive feedback will be provided to help you improve your performance and achieve your professional goals.
   </p>
 
-  <p style="margin-bottom: 12pt; text-align: justify;">
-    Based on the results of the performance appraisal, decisions regarding salary adjustments, promotions, bonuses, and other rewards will be made. It is important to actively participate in the appraisal process and work towards continuous improvement.
-  </p>
-
-  <div class="sec-heading-p23" style="margin-bottom: 3pt;">
-    Confidentiality and Data Protection
-  </div>
-
-  <p style="margin-bottom: 9pt; text-align: justify;">
-    As an employee of PetaBytz Technology Services Private Limited, you will have access to<br>    confidential information that is essential to our business operations. This information includes but<br>    is not limited to trade secrets, proprietary data, customer lists, financial information, marketing<br>    strategies, product development plans, and other sensitive information.
-  </p>
-
-  <p style="margin-bottom: 9pt; text-align: justify;">
-    You are required to maintain the confidentiality of all such information during and after your<br>    employment with the company. You must not disclose any confidential information to any third<br>    party without prior written consent from the company. Additionally, you must take all necessary<br>    precautions to protect the confidentiality of this information and prevent unauthorized access or<br>    disclosure.
-  </p>
-
   <p style="margin-bottom: 0; text-align: justify;">
-    In accordance with data protection laws and regulations, you must ensure that any personal data you handle as part of your job responsibilities is processed lawfully, fairly, and transparently. You
+    Based on the results of the performance appraisal, decisions regarding salary adjustments, promotions, bonuses, and other rewards will be made. It is important to actively participate in the appraisal process and work towards continuous improvement.
   </p>
 </div>
 
@@ -199,20 +183,32 @@ body {
 <div class="page" id="page-3">
   {{ bg_layer(is_page_4=false) }}
 
-  <p style="margin-bottom: 15.6pt; text-align: justify;">
-    must only collect and use personal data for legitimate business purposes and ensure that it is kept secure at all times. Any breach of confidentiality or data protection policies will be treated as a serious disciplinary matter and may result in termination of employment and legal action.
+  <div class="sec-heading-p23" style="margin-bottom: 6pt;">
+    Confidentiality and Data Protection
+  </div>
+
+  <p style="margin-bottom: 12pt; text-align: justify;">
+    {{ text_confidentiality_1 | safe }}
   </p>
 
-  <div class="sec-heading-p23" style="margin-bottom: 3.67pt;">
+  <p style="margin-bottom: 12pt; text-align: justify;">
+    {{ text_confidentiality_2 | safe }}
+  </p>
+
+  <p style="margin-bottom: 16pt; text-align: justify;">
+    {{ text_data_protection | safe }}
+  </p>
+
+  <div class="sec-heading-p23" style="margin-bottom: 6pt;">
     Declaration
   </div>
 
-  <p style="margin-bottom: 15.57pt; text-align: justify;">
-    I have read and accept all the terms and conditions of this offer and the enclosed annexure. I confirm that I am not entitled to any other benefits unless specifically agreed in writing by the company.
+  <p style="margin-bottom: 0; text-align: justify;">
+    {{ text_declaration | safe }}
   </p>
 
   <!-- Page 3 Signatures -->
-  <div style="position: absolute; top: 280.53pt; left: 49.62pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; line-height: 1.15;">
+  <div style="position: absolute; top: 540pt; left: 49.62pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; line-height: 1.15;">
     Best Regards,<br><br><br><br>
     <strong>{{ candidate_name }}</strong><br>
     {{ job_title.replace('Executive-', 'Executive - ') }}<br>
@@ -352,12 +348,12 @@ body {
   </table>
 
   <!-- CTC In Words -->
-  <p style="position: absolute; top: 591.01pt; left: 54.03pt; width: 446pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; font-weight: bold; line-height: 1.15; margin: 0;">
+  <p style="position: absolute; top: 591.01pt; left: 54.03pt; width: 446pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; font-weight: bold; line-height: 1.15; margin: 0;">
     ({{ annual_ctc_words }})
   </p>
 
   <!-- Note -->
-  <p style="position: absolute; top: 604.81pt; left: 54.03pt; width: 446pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; line-height: 1.28; margin: 0; text-align: justify;">
+  <p style="position: absolute; top: 604.81pt; left: 54.03pt; width: 446pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; line-height: 1.28; margin: 0; text-align: justify;">
     <strong>Note:</strong> Payment of perquisites, allowances, and reimbursements is subject to Income Tax provisions and company policies.
   </p>
 
@@ -368,13 +364,13 @@ body {
     {% endif %}
   </div>
   
-  <div style="position: absolute; top: 693.03pt; left: 54.03pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; line-height: 1.2;">
+  <div style="position: absolute; top: 693.03pt; left: 54.03pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; line-height: 1.2;">
     <strong>{{ ceo_name }}</strong><br>
     CEO<br>
     Email: Sanjay.kumar@petabytz.com
   </div>
 
-  <div style="position: absolute; top: 693.03pt; left: 414.32pt; font-family: 'Times New Roman', Times, serif; font-size: 11.6pt; font-weight: bold;">
+  <div style="position: absolute; top: 693.03pt; left: 414.32pt; font-family: Arial, Helvetica, sans-serif; font-size: 10.5pt; font-weight: bold;">
     Employee Signature:
   </div>
 </div>

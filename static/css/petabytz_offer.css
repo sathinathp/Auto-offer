@@ -12,7 +12,7 @@
 body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     color: #000000;
 }
@@ -29,8 +29,8 @@ body {
     padding-right: 88.2pt;
     padding-bottom: 50pt;
     background-color: #ffffff;
-    font-size: 11.6pt;
-    line-height: 1.28;
+    font-size: 10.5pt;
+    line-height: 1.45;
 }
 
 .page:last-of-type {
@@ -59,11 +59,11 @@ body {
 
 /* Headings */
 .pc-head {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 13pt;
     font-weight: bold;
     color: #365f91;
-    margin-bottom: 15.5pt;
+    margin-bottom: 22pt;
     text-align: left;
     line-height: 1;
 }
@@ -72,17 +72,17 @@ body {
 }
 
 .sec-heading-p1 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 12pt;
     color: #1f467a;
     text-align: center;
-    margin-bottom: 0.89pt;
+    margin-bottom: 8pt;
     line-height: 1.15;
 }
 
 .sec-heading-p23 {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 12pt;
     color: #4f81ba;
@@ -91,9 +91,9 @@ body {
 }
 
 .annexure-title {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 11.6pt;
+    font-size: 10.5pt;
     color: #1f467a;
     text-align: center;
     margin-bottom: 27pt;
@@ -101,9 +101,9 @@ body {
 }
 
 .annexure-sub {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 11.6pt;
+    font-size: 10.5pt;
     color: #000000;
     text-align: center;
     margin-top: 1.5pt;
@@ -113,8 +113,8 @@ body {
 
 /* Page 1 paragraphs */
 .page-1-meta {
-    margin-bottom: 11pt;
-    line-height: 1.2;
+    margin-bottom: 15pt;
+    line-height: 1.35;
 }
 
 /* Tables */
@@ -122,8 +122,8 @@ table.info-tbl {
     width: 443.3pt;
     margin-left: -4.4pt;
     border-collapse: collapse;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11.6pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
     margin-bottom: 1.5pt;
 }
 table.info-tbl tr {
@@ -140,8 +140,8 @@ table.sal-tbl {
     width: 443.3pt;
     margin-left: -4.4pt;
     border-collapse: collapse;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11.6pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
     margin-top: 1.1pt;
 }
 table.sal-tbl tr {
@@ -185,7 +185,7 @@ p {
     margin: 0;
     text-align: justify;
     letter-spacing: -0.15px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 11.6pt;
-    line-height: 1.32;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.45;
 }
