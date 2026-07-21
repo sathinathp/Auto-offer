@@ -233,57 +233,105 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <div class="annexure-title">Annexure - A</div>
-       <div class="annexure-subtitle">COMPENSATION BREAKUP</div>
-       <table class="annexure-table">
+       <div class="annexure-header-title bold" style="font-size: 11pt; margin-bottom: 6pt;">ANNEXURE</div>
+       <table class="candidate-info-table" style="width: 100%; margin-bottom: 10pt; font-size: 10pt; border-collapse: collapse;">
+           <tr>
+               <td style="width: 18%; font-weight: bold; padding: 2pt 0;">Name</td>
+               <td style="width: 32%; padding: 2pt 0;">{{ candidate_name | default('Bandi Dharani') }}</td>
+               <td style="width: 18%; font-weight: bold; padding: 2pt 0;">Employee Id</td>
+               <td style="width: 32%; padding: 2pt 0;">{{ employee_id | default('BBSHYD0490') }}</td>
+           </tr>
+           <tr>
+               <td style="font-weight: bold; padding: 2pt 0;">Designation</td>
+               <td style="padding: 2pt 0;">{{ designation | default('Recruiter') }}</td>
+               <td style="font-weight: bold; padding: 2pt 0;">Department</td>
+               <td style="padding: 2pt 0;">{{ department | default('US Staffing') }}</td>
+           </tr>
+       </table>
+
+       <div class="annexure-sub-title bold" style="font-size: 10.5pt; margin-bottom: 4pt; text-align: center;">Annexure I</div>
+       <table class="annexure-table" style="width: 100%; border-collapse: collapse; font-size: 9.5pt; line-height: 1.1;">
            <thead>
-               <tr>
-                   <th style="width: 40%;">Components</th>
-                   <th style="width: 30%;">Monthly (INR)</th>
-                   <th style="width: 30%;">Annual (INR)</th>
+               <tr style="border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                   <th style="text-align: left; padding: 3pt 4pt; font-weight: bold;">Salary Components</th>
+                   <th style="text-align: right; padding: 3pt 4pt; font-weight: bold;">Per Month</th>
+                   <th style="text-align: right; padding: 3pt 4pt; font-weight: bold;">Per Annum</th>
                </tr>
            </thead>
            <tbody>
                <tr>
-                   <td>Basic Salary</td>
-                   <td>{{ basic_m | default('15,000') }}</td>
-                   <td>{{ basic_a | default('1,80,000') }}</td>
+                   <td style="padding: 2.5pt 4pt;">Basic</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ basic_monthly | default(basic_m) | default('15,000') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ basic_annual | default(basic_a) | default('1,80,000') }}</td>
                </tr>
                <tr>
-                   <td>House Rent Allowance (HRA)</td>
-                   <td>{{ hra_m | default('6,000') }}</td>
-                   <td>{{ hra_a | default('72,000') }}</td>
+                   <td style="padding: 2.5pt 4pt;">HRA</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ hra_monthly | default(hra_m) | default('6,000') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ hra_annual | default(hra_a) | default('72,000') }}</td>
                </tr>
                <tr>
-                   <td>Special Allowance</td>
-                   <td>{{ spl_m | default('5,000') }}</td>
-                   <td>{{ spl_a | default('60,000') }}</td>
+                   <td style="padding: 2.5pt 4pt;">Conveyance Allowance</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ conveyance_monthly | default(conv_m) | default('6,000') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ conveyance_annual | default(conv_a) | default('72,000') }}</td>
                </tr>
                <tr>
-                   <td>Conveyance Allowance</td>
-                   <td>{{ conv_m | default('2,000') }}</td>
-                   <td>{{ conv_a | default('24,000') }}</td>
+                   <td style="padding: 2.5pt 4pt;">Special Allowance</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ special_allowance_monthly | default(spl_m) | default('3,000') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ special_allowance_annual | default(spl_a) | default('36,000') }}</td>
+               </tr>
+               <tr style="font-weight: bold;">
+                   <td style="padding: 2.5pt 4pt;">Gross</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ gross_monthly | default(gross_m) | default('30,000') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ gross_annual | default(gross_a) | default('3,60,000') }}</td>
+               </tr>
+               <tr style="font-weight: bold; background-color: #f2f2f2;">
+                   <td colspan="3" style="padding: 2.5pt 4pt;">Employer Contributions</td>
                </tr>
                <tr>
-                   <td>Medical Allowance</td>
-                   <td>{{ med_m | default('2,000') }}</td>
-                   <td>{{ med_a | default('24,000') }}</td>
+                   <td style="padding: 2.5pt 4pt;">Employer PF</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ employer_pf_monthly | default('0.00') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ employer_pf_annual | default('0') }}</td>
                </tr>
-               <tr class="total-row">
-                   <td>Gross Salary</td>
-                   <td>{{ gross_m | default('30,000') }}</td>
-                   <td>{{ gross_a | default('3,60,000') }}</td>
+               <tr style="font-weight: bold;">
+                   <td style="padding: 2.5pt 4pt;">Total (A)</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ total_a_monthly | default('0') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ total_a_annual | default('0') }}</td>
                </tr>
-               <tr class="total-row">
-                   <td>Cost to Company (CTC)</td>
-                   <td>{{ ctc_m | default('30,000') }}</td>
-                   <td>{{ ctc_a | default('3,60,000') }}</td>
+               <tr style="font-weight: bold; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                   <td style="padding: 3pt 4pt;">CTC (Cost to company)</td>
+                   <td style="text-align: right; padding: 3pt 4pt;">{{ ctc_monthly | default(ctc_m) | default('30,000') }}</td>
+                   <td style="text-align: right; padding: 3pt 4pt;">{{ ctc_annual | default(ctc_a) | default('3,60,000') }}</td>
+               </tr>
+               <tr>
+                   <td style="padding: 2.5pt 4pt;">Employee PF</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ employee_pf_monthly | default('0.00') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ employee_pf_annual | default('0') }}</td>
+               </tr>
+               <tr>
+                   <td style="padding: 2.5pt 4pt;">Professional tax</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ professional_tax_monthly | default('200') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ professional_tax_annual | default('2,400') }}</td>
+               </tr>
+               <tr style="font-weight: bold;">
+                   <td style="padding: 2.5pt 4pt;">Total(B)</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ total_b_monthly | default('2,000') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ total_b_annual | default('24,000') }}</td>
+               </tr>
+               <tr style="font-weight: bold;">
+                   <td style="padding: 2.5pt 4pt;">Total Deductions(A+B)</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ total_deductions_monthly | default('2,000') }}</td>
+                   <td style="text-align: right; padding: 2.5pt 4pt;">{{ total_deductions_annual | default('24,000') }}</td>
+               </tr>
+               <tr style="font-weight: bold; border-top: 1px solid #000; border-bottom: 1px solid #000;">
+                   <td style="padding: 3pt 4pt;">Net Amount</td>
+                   <td style="text-align: right; padding: 3pt 4pt;">{{ net_salary_monthly | default('28,000') }}</td>
+                   <td style="text-align: right; padding: 3pt 4pt;">{{ net_salary_annual | default('3,36,000') }}</td>
                </tr>
            </tbody>
        </table>
-       <p class="table-note">* Statutory deductions like PF, ESI, Professional Tax (PT), and IT as applicable will be deducted from your Gross Salary.</p>
+       <p class="table-note" style="margin-top: 8pt; font-size: 8.5pt; font-style: italic;">Note: Payment of perquisites, allowances and reimbursements shall be subject to provisions of Income Tax and as per company policies as applicable or amended from time to time.</p>
        
-       <div class="signatures-wrapper" style="margin-top: 30pt;">
+       <div class="signatures-wrapper" style="margin-top: 16pt;">
            <div class="sig-col-left">
                <img src="{{ sig_ceo_path | default('static/images/sig_ceo.png') }}" class="sig-img" />
                <div class="sig-name-with-img bold">{{ ceo_name | default('Sanjay Kumar') }}</div>
