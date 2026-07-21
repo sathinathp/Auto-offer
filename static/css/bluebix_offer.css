@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @page {
     size: A4;
     margin: 0;
@@ -9,23 +11,23 @@
 }
 body {
     -webkit-print-color-adjust: exact;
-    font-family: 'Times New Roman', Times, serif;
+    print-color-adjust: exact;
+    font-family: 'Tinos', 'Liberation Serif', 'Times New Roman', Times, serif;
 }
-
-
 
 .page {
     width: 595.27pt;
     height: 841.89pt;
     position: relative;
     page-break-after: always;
-    padding-top: 85pt;
+    padding-top: 75pt;
     padding-left: 39.2pt;
     padding-right: 39.2pt;
-    padding-bottom: 55pt;
-    font-size: 10.6pt;
+    padding-bottom: 45pt;
+    font-size: 10.5pt;
     line-height: 1.15;
     color: #000000;
+    overflow: hidden;
 }
 .header {
     position: absolute;
@@ -49,26 +51,27 @@ body {
 }
 .footer {
     position: absolute;
-    bottom: 17.4pt;
+    bottom: 14pt;
     left: 0;
     width: 595.27pt;
     text-align: center;
+    z-index: 100;
 }
 .footer-line {
     width: 535pt;
     height: 1.0pt;
     background-color: #000000;
-    margin: 0 auto 7.6pt auto;
+    margin: 0 auto 5pt auto;
 }
 .footer-text {
-    font-size: 10.6pt;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 10.0pt;
+    font-family: 'Tinos', 'Liberation Serif', 'Times New Roman', Times, serif;
     color: #000000;
     text-align: center;
     line-height: 1.15;
 }
 p {
-    margin-bottom: 8pt;
+    margin-bottom: 7pt;
     text-align: justify;
 }
 .bold {
@@ -81,33 +84,33 @@ p {
     float: right;
 }
 .date-row {
-    margin-bottom: 12pt;
+    margin-bottom: 10pt;
     overflow: hidden;
 }
 .candidate-address {
-    margin-bottom: 12pt;
-    line-height: 1.25;
+    margin-bottom: 10pt;
+    line-height: 1.2;
 }
 .subject {
-    margin-top: 10pt;
-    margin-bottom: 12pt;
+    margin-top: 8pt;
+    margin-bottom: 10pt;
     text-decoration: underline;
 }
 ul.bullets {
-    margin-bottom: 8pt;
+    margin-bottom: 7pt;
     margin-left: 20pt;
 }
 ul.bullets li {
-    margin-bottom: 4pt;
+    margin-bottom: 3pt;
     list-style-type: disc;
     padding-left: 2pt;
     text-align: justify;
 }
 .letter-list {
-    margin-bottom: 8pt;
+    margin-bottom: 7pt;
 }
 .list-item {
-    margin-bottom: 6pt;
+    margin-bottom: 5pt;
     text-align: justify;
     position: relative;
     padding-left: 15pt;
@@ -118,10 +121,10 @@ ul.bullets li {
     top: 0;
 }
 .contingency-list {
-    margin-bottom: 8pt;
+    margin-bottom: 7pt;
 }
 .contingency-item {
-    margin-bottom: 6pt;
+    margin-bottom: 5pt;
     text-align: justify;
     position: relative;
     padding-left: 15pt;
@@ -133,11 +136,11 @@ ul.bullets li {
     font-family: "Segoe UI Symbol", sans-serif;
 }
 .sub-list {
-    margin-top: 4pt;
+    margin-top: 3pt;
     margin-left: 5pt;
 }
 .sub-item {
-    margin-bottom: 4pt;
+    margin-bottom: 3pt;
     text-align: justify;
     position: relative;
     padding-left: 15pt;
@@ -148,12 +151,12 @@ ul.bullets li {
     top: 0;
 }
 .sub-sub-list {
-    margin-top: 4pt;
+    margin-top: 3pt;
     margin-left: 15pt;
 }
 .signatures-wrapper {
     position: relative;
-    margin-top: 15pt;
+    margin-top: 10pt;
     left: 0;
     width: 516.87pt;
     height: 65pt;
@@ -176,76 +179,76 @@ ul.bullets li {
     display: block;
 }
 .sig-name-with-img {
-    font-size: 10.6pt;
+    font-size: 10.5pt;
     line-height: 1.15;
 }
 .sig-title {
-    font-size: 10.6pt;
+    font-size: 10.5pt;
     line-height: 1.15;
 }
 /* Page 1 overrides */
 #page-1 p {
-    margin-bottom: 14.0pt;
+    margin-bottom: 9.0pt;
 }
 #page-1 .letter-list {
-    margin-bottom: 14.0pt;
+    margin-bottom: 9.0pt;
 }
 #page-1 .list-item {
-    margin-bottom: 14.0pt;
+    margin-bottom: 8.0pt;
 }
 #page-1 ul.bullets {
-    margin-bottom: 14.0pt;
+    margin-bottom: 9.0pt;
 }
 #page-1 ul.bullets li {
-    margin-bottom: 7.0pt;
+    margin-bottom: 4.0pt;
 }
 
 /* Page 2 overrides */
 #page-2 p {
-    margin-bottom: 14.0pt;
+    margin-bottom: 10.0pt;
 }
 #page-2 .contingency-list {
-    margin-bottom: 14.0pt;
+    margin-bottom: 10.0pt;
 }
 #page-2 .contingency-item {
-    margin-bottom: 17.5pt;
+    margin-bottom: 12.0pt;
 }
 
 /* Page 3 overrides */
 #page-3 p {
-    margin-bottom: 8.5pt;
+    margin-bottom: 7.5pt;
 }
 #page-3 .contingency-list {
-    margin-bottom: 8.5pt;
+    margin-bottom: 7.5pt;
 }
 #page-3 .contingency-item {
-    margin-bottom: 8.5pt;
+    margin-bottom: 7.5pt;
 }
 #page-3 .sub-list {
-    margin-top: 4.0pt;
+    margin-top: 3.0pt;
 }
 #page-3 .sub-item {
-    margin-bottom: 6.5pt;
+    margin-bottom: 5.0pt;
 }
 
 /* Page 4 overrides */
 #page-4 p {
-    margin-bottom: 6pt;
+    margin-bottom: 5pt;
 }
 #page-4 .sub-list {
-    margin-bottom: 6pt;
+    margin-bottom: 5pt;
 }
 #page-4 .sub-item {
-    margin-bottom: 4pt;
+    margin-bottom: 3.5pt;
 }
 #page-4 ul.bullets {
-    margin-bottom: 6pt;
+    margin-bottom: 5pt;
 }
 #page-4 ul.bullets li {
-    margin-bottom: 4pt;
+    margin-bottom: 3pt;
 }
 #page-4 .signatures-wrapper {
-    margin-top: 12pt;
+    margin-top: 10pt;
 }
 
 /* Page 5 Annexure */

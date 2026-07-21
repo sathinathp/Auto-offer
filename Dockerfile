@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     media-types \
     mailcap \
     fonts-dejavu \
+    fonts-liberation \
     fontconfig \
     && rm -rf /var/lib/apt/lists/*
 
