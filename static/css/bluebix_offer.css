@@ -23,10 +23,10 @@ body {
     height: 841.89pt;
     position: relative;
     page-break-after: always;
-    padding-top: 65pt;
+    padding-top: 75pt;
     padding-left: 39.2pt;
     padding-right: 39.2pt;
-    padding-bottom: 35pt;
+    padding-bottom: 45pt;
     font-size: 11pt;
     line-height: 1.18;
     color: #000000;
@@ -92,7 +92,8 @@ body {
     line-height: 1.15;
 }
 p {
-    margin-bottom: 7pt;
+    margin-bottom: 9.5pt;
+    line-height: 1.22;
     text-align: justify;
 }
 .bold {
@@ -291,6 +292,73 @@ ul.bullets li {
 #page-4 ul.bullets li {
     margin-bottom: 1.5pt;
 }
+#page-4 ul.annexure-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.candidate-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: -1px;
+    font-size: 9.5pt;
+}
+
+.candidate-info-table td {
+    border: 1px solid #595959;
+    padding: 2.5pt 8pt;
+}
+
+.candidate-info-table td.label {
+    font-weight: bold;
+    width: 45%;
+}
+
+.candidate-info-table td.value {
+    width: 55%;
+    text-align: right;
+}
+
+.annexure-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+}
+
+.annexure-table th, .annexure-table td {
+    border: 1px solid #595959;
+    padding: 2.5pt 6pt;
+}
+
+.annexure-table .annexure-title-row td {
+    text-align: center;
+    font-weight: bold;
+    font-size: 9.5pt;
+    padding: 2.5pt 6pt;
+}
+
+.annexure-table .header-row td {
+    background-color: #a9d08e;
+    color: #000000;
+    font-weight: bold;
+}
+
+.annexure-table .blue-row td {
+    background-color: #8ea9db;
+    font-weight: bold;
+}
+
+.annexure-table .bold-row td {
+    font-weight: bold;
+}
+
+.annexure-note-red {
+    color: #c00000;
+    font-size: 8.5pt;
+    margin-top: 14pt;
+    line-height: 1.25;
+}
+
 #page-4 .signatures-wrapper {
     margin-top: 8pt;
 }
