@@ -14,17 +14,17 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <div class="doc-header-row" style="margin-bottom: 12pt; overflow: hidden;">
+       <div class="doc-header-row" style="margin-bottom: 10pt; overflow: hidden;">
            <span class="bold" style="float: left;">PRIVATE AND CONFIDENTIAL</span>
            <span style="float: right;">{{ date | default('26 February 2026') }}</span>
        </div>
        
-       <div class="candidate-address" style="margin-bottom: 12pt; line-height: 1.25;">
+       <div class="candidate-address" style="margin-bottom: 10pt; line-height: 1.25;">
            <span class="bold">{{ title | default('Ms.') }} {{ candidate_name | default('Bandi Dharani') }},</span><br/>
            <span class="bold">{{ candidate_phone | default('+91 8179434324') }}</span>
        </div>
        
-       <div class="subject center bold" style="text-align: center; font-weight: bold; margin-top: 10pt; margin-bottom: 12pt; text-decoration: underline;">Sub: Employment Offer</div>
+       <div class="subject center bold" style="text-align: center; font-weight: bold; margin-top: 8pt; margin-bottom: 10pt; text-decoration: underline;">Sub: Employment Offer</div>
        
        <p>Dear <span class="bold">{{ candidate_name | default('Bandi Dharani') }}</span>,</p>
        
@@ -40,17 +40,19 @@
        
        <p><span class="bold" style="text-decoration: underline;">Probation:</span> You will be on probation for <span class="bold" style="text-decoration: underline;">three months (3)</span> from the date of your joining. Your services will be confirmed after successful completion of three months and <span class="bold" style="text-decoration: underline;">subject to your performance and timely evaluation of your work process.</span> <span class="bold">The period of probation can be extended at the discretion of the Management, and you will continue to be on probation till an order of confirmation has been issued in writing.</span></p>
        
-       <p class="bold" style="margin-bottom: 4pt; text-decoration: underline;">Some additional points:</p>
-       <ul class="bullets" style="margin-bottom: 6pt;">
+       <p class="bold" style="margin-bottom: 3pt; text-decoration: underline;">Some additional points:</p>
+       <ul class="bullets" style="margin-bottom: 5pt;">
            <li><span class="bold">Bluebix Solutions Inc.</span>, hold rights to all the intellectual property developed during your employment.</li>
            <li>All work and discussions are confidential and are not to be discussed or published outside the company, except with an agreement by the Director</li>
            <li>External work with another party has to be agreed with the Director in writing in advance. Compliance with Bluebix Solutions Inc., non-compete policy in employment contract.</li>
        </ul>
-       <p class="bold" style="margin-bottom: 4pt; text-decoration: underline;">Termination of Employment:</p>
-       <div class="letter-list" style="margin-bottom: 0;">
-           <div class="list-item" style="margin-bottom: 4pt;"><span class="list-num bold">a.</span>Your employment/ services will be governed by Company's rules and regulations applicable from time to time. If the Company is not satisfied with your performance on any account, the Company reserves the right to terminate your employment with a notice of 15 days or by paying proportionate salary in lieu of any short notice only if you are a confirmed Permanent employee of the organization. This in no way limits the Company's right to terminate your employment without notice in the event of serious misconduct which include, committing a criminal offence, theft, fraud, embezzlement, intoxication, violence, sexual harassment, damage to the Company's reputation etc.</div>
+       <p class="bold" style="margin-bottom: 3pt; text-decoration: underline;">Termination of Employment:</p>
+       <div class="letter-list" style="margin-bottom: 5pt;">
+           <div class="list-item" style="margin-bottom: 3pt;"><span class="list-num bold">a.</span>Your employment/ services will be governed by Company's rules and regulations applicable from time to time. If the Company is not satisfied with your performance on any account, the Company reserves the right to terminate your employment with a notice of 15 days or by paying proportionate salary in lieu of any short notice only if you are a confirmed Permanent employee of the organization. This in no way limits the Company's right to terminate your employment without notice in the event of serious misconduct which include, committing a criminal offence, theft, fraud, embezzlement, intoxication, violence, sexual harassment, damage to the Company's reputation etc.</div>
            <div class="list-item" style="margin-bottom: 0;"><span class="list-num bold">b.</span>The Company reserves the right to terminate your services without giving any reasons during probation, not giving any kind of compensation or notice as mentioned in point "a".</div>
        </div>
+       <p class="bold" style="margin-bottom: 3pt;">Notice Period:</p>
+       <p style="margin-bottom: 0;">Under normal circumstances the standard Notice period is 30 days and Management has the right to extend the notice period based on the business requirement. Full and Final Settlement is 45 days from the date of relieving. Upon termination /Relieving of employment, you will immediately hand over to the Company all correspondence, specifications, formulae, books, documents, market data, cost data, drawings, effects, or records belonging to the Company or relating to its business and shall not retain or make copies of these items. Upon termination / Relieving of employment, you will also return all company property, which may be in your possession.</p>
    </div>
    <div class="footer">
        <div class="footer-line"></div>
@@ -65,10 +67,7 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <p class="bold" style="margin-bottom: 4pt;">Notice Period:</p>
-       <p style="margin-bottom: 10pt;">Under normal circumstances the standard Notice period is 30 days and Management has the right to extend the notice period based on the business requirement. Full and Final Settlement is 45 days from the date of relieving. Upon termination /Relieving of employment, you will immediately hand over to the Company all correspondence, specifications, formulae, books, documents, market data, cost data, drawings, effects, or records belonging to the Company or relating to its business and shall not retain or make copies of these items. Upon termination / Relieving of employment, you will also return all company property, which may be in your possession.</p>
-
-       <p class="bold" style="margin-bottom: 6pt;">Contingencies:</p>
+       <p class="bold" style="margin-bottom: 5pt;">Contingencies:</p>
        <div class="contingency-list" style="margin-bottom: 0;">
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
@@ -105,10 +104,24 @@
                <span class="bold">Restrain: Restriction on Personal Use</span><br/>
                Use of company resources for personal use is strictly restricted. This includes usage of computer resources, information, internet service, and working time of the company for any personal use.
            </div>
-           <div class="contingency-item" style="margin-bottom: 0;">
+           <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
                <span class="bold">Leave:</span><br/>
                You will be entitled to leave as per law in force and as laid down in the Standing Orders of the company. Three days’ advance intimation is required to be given for availing leave. In the event of a sick leave, you will be required to furnish a doctor’s certificate for the period of leave. The company follows strict time schedule and late comings are discouraged, unless otherwise notified by you in advance. Late marks will be accorded to you for every late entry with one day of absence counted for every three late marks.
+           </div>
+           <div class="contingency-item">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Security:</span><br/>
+               Security is an important aspect of our communication and office infrastructure. Communication security is maintained by controlling physical access to computer system, disabling all working stations, floppy disk drives and companywide awareness about the need for protection of intellectual property and sensitive customer information.
+           </div>
+           <div class="contingency-item" style="margin-bottom: 0;">
+               <span class="contingency-bullet">➢</span>
+               <span class="bold">Termination of Service:</span>
+               <div class="sub-list" style="margin-bottom: 0;">
+                   <div class="sub-item"><span class="sub-num">i.</span>Either party can terminate this employment by serving a notice of {{ notice_period | default('30 days') }} on the other, save and accept that the company may at its option pay salary in lieu of the notice period to terminate employment with immediate effect.</div>
+                   <div class="sub-item"><span class="sub-num">ii.</span>Unauthorized absence or absence without permission from duty for a continuous period of 3 days would make you lose your lien on employment. In such case your employment shall automatically come to an end without any notice of termination or notice pay.</div>
+                   <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">iii.</span>You will be governed by the laid down code of conduct of the company and if there is any breach of the same or non-conformance of contractual obligation or with the terms and conditions laid down in this agreement, your service can be terminated without any notice; notwithstanding any other terms and conditions stipulated herein the company reserves the right to invoke other legal remedies as it deems fit to protect its legitimate interest.</div>
+               </div>
            </div>
        </div>
    </div>
@@ -126,20 +139,6 @@
    </div>
    <div class="content">
        <div class="contingency-list" style="margin-bottom: 0;">
-           <div class="contingency-item">
-               <span class="contingency-bullet">➢</span>
-               <span class="bold">Security:</span><br/>
-               Security is an important aspect of our communication and office infrastructure. Communication security is maintained by controlling physical access to computer system, disabling all working stations, floppy disk drives and companywide awareness about the need for protection of intellectual property and sensitive customer information.
-           </div>
-           <div class="contingency-item">
-               <span class="contingency-bullet">➢</span>
-               <span class="bold">Termination of Service:</span>
-               <div class="sub-list" style="margin-bottom: 0;">
-                   <div class="sub-item"><span class="sub-num">i.</span>Either party can terminate this employment by serving a notice of {{ notice_period | default('30 days') }} on the other, save and accept that the company may at its option pay salary in lieu of the notice period to terminate employment with immediate effect.</div>
-                   <div class="sub-item"><span class="sub-num">ii.</span>Unauthorized absence or absence without permission from duty for a continuous period of 3 days would make you lose your lien on employment. In such case your employment shall automatically come to an end without any notice of termination or notice pay.</div>
-                   <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">iii.</span>You will be governed by the laid down code of conduct of the company and if there is any breach of the same or non-conformance of contractual obligation or with the terms and conditions laid down in this agreement, your service can be terminated without any notice; notwithstanding any other terms and conditions stipulated herein the company reserves the right to invoke other legal remedies as it deems fit to protect its legitimate interest.</div>
-               </div>
-           </div>
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
                <span class="bold">Standing Orders:</span><br/>
@@ -162,7 +161,8 @@
                    <div class="sub-item"><span class="sub-num">i.</span>The Employee undertakes to the Employer that he/she shall not and shall ensure that none of his/her Affiliates shall, either on his/her own account or in association with others engage or participate directly or indirectly, whether as shareholder, director, partner, proprietor, member, agent, distributor, employee or otherwise, within India or outside India, during the period of his/his employment in whatever capacity with the Employer and for a further period of 1 (One) Year from the date of ceasing to be in such employment, for whatever reasons: In any business which, involves, relates to, or competes with the Employer’s Business;</div>
                    <div class="sub-item"><span class="sub-num">(a)</span>Establish, develop, carry on or assist in carrying on or be engaged, concerned, interested, or employed in any business enterprise or venture competing with the Employer’s Business:</div>
                    <div class="sub-item"><span class="sub-num">(b)</span>Solicit, canvas or entice away (or Endeavour to solicit, canvass or entice away) from the Employer’s Business, or from any Affiliate of the Employer, any person, firm or company who was at any time during the period of one year immediately preceding the date of cessation of employment, a client of the Employer’s Business, for the purpose of offering to such client or customer, goods or services similar to or competing with those of the Employer’s Business;</div>
-                   <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">(c)</span>Solicit, canvass or entice away (or endeavor to solicit, canvass or entice away) any of the employees including the senior employees and/or technical or sales and marketing staff from the Employer or from any of its Affiliates, for the purpose of employment in an enterprise or venture competing with the Employer’s Business, whether or not such person</div>
+                   <div class="sub-item"><span class="sub-num">(c)</span>Solicit, canvass or entice away (or endeavor to solicit, canvass or entice away) any of the employees including the senior employees and/or technical or sales and marketing staff from the Employer or from any of its Affiliates, for the purpose of employment in an enterprise or venture competing with the Employer’s Business, whether or not such person</div>
+                   <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">(d)</span>Solicit, canvass, or entice away (or endeavor to solicit canvass or entice away) any supplier of the Employer or of any of its Affiliates or use its knowledge of or influence over any such supplier to or for its benefit or for the benefit of any other person carrying on business competing with the Employer’s business or with any business of the Employer’s Affiliates;</div>
                </div>
            </div>
        </div>
@@ -183,7 +183,6 @@
        <p style="margin-bottom: 6pt;">would commit a breach of contract by reason of leaving service with the Employer;</p>
        
        <div class="sub-list" style="margin-left: 0; margin-bottom: 8pt;">
-           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(d)</span>Solicit, canvass, or entice away (or endeavor to solicit canvass or entice away) any supplier of the Employer or of any of its Affiliates or use its knowledge of or influence over any such supplier to or for its benefit or for the benefit of any other person carrying on business competing with the Employer’s business or with any business of the Employer’s Affiliates;</div>
            <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">e)</span>Act as an advisor, consultant, trustee, or agent for any third person who is engaged or proposes to start any business which directly or indirectly relates to the Employer’s business or promote, start, engage in or do any business that directly or indirectly relates to the Employer’s Business;</div>
            <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(f)</span>Establish after the execution hereof at any future point of time any business or trade undera name that is identical or similar to the Company’s or which in any way suggests any connection with The Company without written consent of the Employer. For the purposes of clarification, it is agreed by the Parties that the obligation, not to use a name which is identical or similar to The Company’s shall not be limited to the term/ period referred to in Section above, in which case this restraint will have effect for an indefinite period.</div>
            <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">ii.</span>Each of the above covenants shall be construed as a separate covenant and if one or more of the covenants is held to be unlawful, the remaining covenants shall continue to bind the Employee and their Affiliates.</div>
