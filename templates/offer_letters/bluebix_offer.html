@@ -14,15 +14,17 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <div class="doc-title">PRIVATE AND CONFIDENTIAL</div>
-       <div class="date-row">{{ date | default('26 February 2026') }}</div>
-       
-       <div class="candidate-address">
-           <span class="bold">{{ title | default('Ms.') }} {{ candidate_name | default('Bandi Dharani') }},</span><br/>
-           {{ candidate_phone | default('+91 8179434324') }}
+       <div class="doc-header-row" style="margin-bottom: 12pt; overflow: hidden;">
+           <span class="bold" style="float: left;">PRIVATE AND CONFIDENTIAL</span>
+           <span style="float: right;">{{ date | default('26 February 2026') }}</span>
        </div>
        
-       <div class="subject">Sub: Employment Offer</div>
+       <div class="candidate-address" style="margin-bottom: 12pt; line-height: 1.25;">
+           <span class="bold">{{ title | default('Ms.') }} {{ candidate_name | default('Bandi Dharani') }},</span><br/>
+           <span class="bold">{{ candidate_phone | default('+91 8179434324') }}</span>
+       </div>
+       
+       <div class="subject center bold" style="text-align: center; font-weight: bold; margin-top: 10pt; margin-bottom: 12pt;">Sub: Employment Offer</div>
        
        <p>Dear <span class="bold">{{ candidate_name | default('Bandi Dharani') }}</span>,</p>
        
