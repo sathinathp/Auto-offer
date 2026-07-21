@@ -4,6 +4,23 @@
     <meta charset="utf-8">
     <title>Bluebix Offer Letter</title>
     <link rel="stylesheet" href="static/css/bluebix_offer.css">
+    <style>
+        .page {
+            font-size: 11pt !important;
+            line-height: 1.18 !important;
+            padding-top: 65pt !important;
+            padding-bottom: 35pt !important;
+        }
+        p {
+            margin-bottom: 5pt !important;
+        }
+        .contingency-item {
+            margin-bottom: 4pt !important;
+        }
+        .sub-item {
+            margin-bottom: 2pt !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,17 +31,17 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <div class="doc-header-row" style="margin-bottom: 12pt; overflow: hidden;">
+       <div class="doc-header-row" style="margin-bottom: 8pt; overflow: hidden;">
            <span class="bold" style="float: left;">PRIVATE AND CONFIDENTIAL</span>
            <span style="float: right;">{{ date | default('26 February 2026') }}</span>
        </div>
        
-       <div class="candidate-address" style="margin-bottom: 12pt; line-height: 1.3;">
+       <div class="candidate-address" style="margin-bottom: 8pt; line-height: 1.2;">
            <span class="bold">{{ title | default('Ms.') }} {{ candidate_name | default('Bandi Dharani') }},</span><br/>
            <span class="bold">{{ candidate_phone | default('+91 8179434324') }}</span>
        </div>
        
-       <div class="subject center bold" style="text-align: center; font-weight: bold; margin-top: 10pt; margin-bottom: 14pt; text-decoration: underline;">Sub: Employment Offer</div>
+       <div class="subject center bold" style="text-align: center; font-weight: bold; margin-top: 6pt; margin-bottom: 8pt; text-decoration: underline;">Sub: Employment Offer</div>
        
        <p>Dear <span class="bold">{{ candidate_name | default('Bandi Dharani') }}</span>,</p>
        
@@ -40,15 +57,15 @@
        
        <p><span class="bold" style="text-decoration: underline;">Probation:</span> You will be on probation for <span class="bold" style="text-decoration: underline;">three months (3)</span> from the date of your joining. Your services will be confirmed after successful completion of three months and <span class="bold" style="text-decoration: underline;">subject to your performance and timely evaluation of your work process.</span> <span class="bold">The period of probation can be extended at the discretion of the Management, and you will continue to be on probation till an order of confirmation has been issued in writing.</span></p>
        
-       <p class="bold" style="margin-bottom: 5pt; text-decoration: underline;">Some additional points:</p>
-       <ul class="bullets" style="margin-bottom: 8pt;">
+       <p class="bold" style="margin-bottom: 4pt; text-decoration: underline;">Some additional points:</p>
+       <ul class="bullets" style="margin-bottom: 6pt;">
            <li><span class="bold">Bluebix Solutions Inc.</span>, hold rights to all the intellectual property developed during your employment.</li>
            <li>All work and discussions are confidential and are not to be discussed or published outside the company, except with an agreement by the Director</li>
            <li>External work with another party has to be agreed with the Director in writing in advance. Compliance with Bluebix Solutions Inc., non-compete policy in employment contract.</li>
        </ul>
-       <p class="bold" style="margin-bottom: 5pt; text-decoration: underline;">Termination of Employment:</p>
+       <p class="bold" style="margin-bottom: 4pt; text-decoration: underline;">Termination of Employment:</p>
        <div class="letter-list" style="margin-bottom: 0;">
-           <div class="list-item" style="margin-bottom: 5pt;"><span class="list-num bold">a.</span>Your employment/ services will be governed by Company's rules and regulations applicable from time to time. If the Company is not satisfied with your performance on any account, the Company reserves the right to terminate your employment with a notice of 15 days or by paying proportionate salary in lieu of any short notice only if you are a confirmed Permanent employee of the organization. This in no way limits the Company's right to terminate your employment without notice in the event of serious misconduct which include, committing a criminal offence, theft, fraud, embezzlement, intoxication, violence, sexual harassment, damage to the Company's reputation etc.</div>
+           <div class="list-item" style="margin-bottom: 4pt;"><span class="list-num bold">a.</span>Your employment/ services will be governed by Company's rules and regulations applicable from time to time. If the Company is not satisfied with your performance on any account, the Company reserves the right to terminate your employment with a notice of 15 days or by paying proportionate salary in lieu of any short notice only if you are a confirmed Permanent employee of the organization. This in no way limits the Company's right to terminate your employment without notice in the event of serious misconduct which include, committing a criminal offence, theft, fraud, embezzlement, intoxication, violence, sexual harassment, damage to the Company's reputation etc.</div>
            <div class="list-item" style="margin-bottom: 0;"><span class="list-num bold">b.</span>The Company reserves the right to terminate your services without giving any reasons during probation, not giving any kind of compensation or notice as mentioned in point "a".</div>
        </div>
    </div>
@@ -65,10 +82,10 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <p class="bold" style="margin-bottom: 6pt;">Notice Period:</p>
-       <p style="margin-bottom: 12pt;">Under normal circumstances the standard Notice period is 30 days and Management has the right to extend the notice period based on the business requirement. Full and Final Settlement is 45 days from the date of relieving. Upon termination /Relieving of employment, you will immediately hand over to the Company all correspondence, specifications, formulae, books, documents, market data, cost data, drawings, effects, or records belonging to the Company or relating to its business and shall not retain or make copies of these items. Upon termination / Relieving of employment, you will also return all company property, which may be in your possession.</p>
+       <p class="bold" style="margin-bottom: 4pt;">Notice Period:</p>
+       <p style="margin-bottom: 8pt;">Under normal circumstances the standard Notice period is 30 days and Management has the right to extend the notice period based on the business requirement. Full and Final Settlement is 45 days from the date of relieving. Upon termination /Relieving of employment, you will immediately hand over to the Company all correspondence, specifications, formulae, books, documents, market data, cost data, drawings, effects, or records belonging to the Company or relating to its business and shall not retain or make copies of these items. Upon termination / Relieving of employment, you will also return all company property, which may be in your possession.</p>
 
-       <p class="bold" style="margin-bottom: 8pt;">Contingencies:</p>
+       <p class="bold" style="margin-bottom: 5pt;">Contingencies:</p>
        <div class="contingency-list" style="margin-bottom: 0;">
            <div class="contingency-item">
                <span class="contingency-bullet">➢</span>
@@ -180,25 +197,25 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <p style="margin-bottom: 6pt;">would commit a breach of contract by reason of leaving service with the Employer;</p>
+       <p style="margin-bottom: 4pt;">would commit a breach of contract by reason of leaving service with the Employer;</p>
        
-       <div class="sub-list" style="margin-left: 0; margin-bottom: 8pt;">
-           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(d)</span>Solicit, canvass, or entice away (or endeavor to solicit canvass or entice away) any supplier of the Employer or of any of its Affiliates or use its knowledge of or influence over any such supplier to or for its benefit or for the benefit of any other person carrying on business competing with the Employer’s business or with any business of the Employer’s Affiliates;</div>
-           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">e)</span>Act as an advisor, consultant, trustee, or agent for any third person who is engaged or proposes to start any business which directly or indirectly relates to the Employer’s business or promote, start, engage in or do any business that directly or indirectly relates to the Employer’s Business;</div>
-           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(f)</span>Establish after the execution hereof at any future point of time any business or trade undera name that is identical or similar to the Company’s or which in any way suggests any connection with The Company without written consent of the Employer. For the purposes of clarification, it is agreed by the Parties that the obligation, not to use a name which is identical or similar to The Company’s shall not be limited to the term/ period referred to in Section above, in which case this restraint will have effect for an indefinite period.</div>
-           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">ii.</span>Each of the above covenants shall be construed as a separate covenant and if one or more of the covenants is held to be unlawful, the remaining covenants shall continue to bind the Employee and their Affiliates.</div>
-           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">iii.</span>It is expressly agreed by the Parties hereto that the Employer’s obligations under this Agreement shall include that the Employee shall not directly or indirectly in any manner whatsoever undertake any competing Business through his Relatives. However, this clause shall not be read and understood to constitute a bar on a relative of the Employee acting purely in the capacity of an employee for a competing business. The Employee shall promptly inform the Employer as and when he has knowledge of the fact that any of his Relatives are undertaking or propose to undertake any competing business.</div>
+       <div class="sub-list" style="margin-left: 0; margin-bottom: 6pt;">
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 3pt;"><span class="sub-num">(d)</span>Solicit, canvass, or entice away (or endeavor to solicit canvass or entice away) any supplier of the Employer or of any of its Affiliates or use its knowledge of or influence over any such supplier to or for its benefit or for the benefit of any other person carrying on business competing with the Employer’s business or with any business of the Employer’s Affiliates;</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 3pt;"><span class="sub-num">e)</span>Act as an advisor, consultant, trustee, or agent for any third person who is engaged or proposes to start any business which directly or indirectly relates to the Employer’s business or promote, start, engage in or do any business that directly or indirectly relates to the Employer’s Business;</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 3pt;"><span class="sub-num">(f)</span>Establish after the execution hereof at any future point of time any business or trade undera name that is identical or similar to the Company’s or which in any way suggests any connection with The Company without written consent of the Employer. For the purposes of clarification, it is agreed by the Parties that the obligation, not to use a name which is identical or similar to The Company’s shall not be limited to the term/ period referred to in Section above, in which case this restraint will have effect for an indefinite period.</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 3pt;"><span class="sub-num">ii.</span>Each of the above covenants shall be construed as a separate covenant and if one or more of the covenants is held to be unlawful, the remaining covenants shall continue to bind the Employee and their Affiliates.</div>
+           <div class="sub-item" style="padding-left: 15pt; margin-bottom: 3pt;"><span class="sub-num">iii.</span>It is expressly agreed by the Parties hereto that the Employer’s obligations under this Agreement shall include that the Employee shall not directly or indirectly in any manner whatsoever undertake any competing Business through his Relatives. However, this clause shall not be read and understood to constitute a bar on a relative of the Employee acting purely in the capacity of an employee for a competing business. The Employee shall promptly inform the Employer as and when he has knowledge of the fact that any of his Relatives are undertaking or propose to undertake any competing business.</div>
            <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">iv.</span>For the purpose of this Section, the expression “competing with the Employer’s Business” or Competing Business” shall be deemed to include the following:
-               <div class="sub-sub-list" style="margin-left: 10pt; margin-top: 4pt;">
-                   <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(a)</span>setting up, promoting or investing in a business, venture, activity or company which entails or proposes to compete againstthe business of the Employer by inter alia offering same or similar Service as are offered or proposed to be offered by the Employer and/or its Affiliate.</div>
-                   <div class="sub-item" style="padding-left: 15pt; margin-bottom: 4pt;"><span class="sub-num">(b)</span>entering into any agreement or arrangement, with any third party which results or is likely to result in making available same or similar services as are offered or proposed to be offered by the Employer and/or its Affiliate;</div>
+               <div class="sub-sub-list" style="margin-left: 10pt; margin-top: 3pt;">
+                   <div class="sub-item" style="padding-left: 15pt; margin-bottom: 3pt;"><span class="sub-num">(a)</span>setting up, promoting or investing in a business, venture, activity or company which entails or proposes to compete againstthe business of the Employer by inter alia offering same or similar Service as are offered or proposed to be offered by the Employer and/or its Affiliate.</div>
+                   <div class="sub-item" style="padding-left: 15pt; margin-bottom: 3pt;"><span class="sub-num">(b)</span>entering into any agreement or arrangement, with any third party which results or is likely to result in making available same or similar services as are offered or proposed to be offered by the Employer and/or its Affiliate;</div>
                    <div class="sub-item" style="margin-bottom: 0;"><span class="sub-num">(c)</span>entering into any agreement with any third party for the transfer of business knowledge or information to any third party so as to offer the third party an opportunity to compete with the Service and business of the Employer by inter alia offering same or similar Service as are offered or proposed to be offered by the Employer and/or its Affiliate.</div>
                </div>
            </div>
        </div>
        
-       <p class="bold" style="margin-bottom: 4pt;">On your joining date, you are requested to produce the following original documents along with the Photocopies for verification:</p>
-       <ul class="bullets" style="margin-bottom: 8pt; margin-left: 15pt;">
+       <p class="bold" style="margin-bottom: 3pt;">On your joining date, you are requested to produce the following original documents along with the Photocopies for verification:</p>
+       <ul class="bullets" style="margin-bottom: 6pt; margin-left: 15pt;">
            <li>Updated resume</li>
            <li>Educational Qualifications from 10<sup>th</sup></li>
            <li>Pan Card</li>
@@ -207,9 +224,9 @@
            <li>2 passport size photos</li>
        </ul>
        
-       <p style="margin-bottom: 8pt;">{{ text_closing | default('We are sure you will have a rewarding and exciting career with Bluebix Solutions Inc. If you have questions, please do not hesitate to contact us in the signature below. Please send us a signed scan copy of this letter as an acknowledgement of the above offer.') }}</p>
+       <p style="margin-bottom: 6pt;">{{ text_closing | default('We are sure you will have a rewarding and exciting career with Bluebix Solutions Inc. If you have questions, please do not hesitate to contact us in the signature below. Please send us a signed scan copy of this letter as an acknowledgement of the above offer.') }}</p>
        
-       <p style="margin-bottom: 4pt;">Sincerely Yours</p>
+       <p style="margin-bottom: 3pt;">Sincerely Yours</p>
        <p class="bold" style="margin-bottom: 0;">For Bluebix Solutions Inc.</p>
        
        <div class="signatures-wrapper">
