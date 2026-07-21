@@ -188,19 +188,19 @@ ul.bullets li {
 }
 /* Page 1 overrides */
 #page-1 p {
-    margin-bottom: 9.0pt;
+    margin-bottom: 12.5pt;
 }
 #page-1 .letter-list {
-    margin-bottom: 9.0pt;
+    margin-bottom: 12.5pt;
 }
 #page-1 .list-item {
-    margin-bottom: 8.0pt;
+    margin-bottom: 11.0pt;
 }
 #page-1 ul.bullets {
-    margin-bottom: 9.0pt;
+    margin-bottom: 12.5pt;
 }
 #page-1 ul.bullets li {
-    margin-bottom: 4.0pt;
+    margin-bottom: 5.5pt;
 }
 
 /* Page 2 overrides */
