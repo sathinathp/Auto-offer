@@ -15,11 +15,11 @@ body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     font-family: 'Arimo', 'Liberation Sans', Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
+    background-color: #333639;
     color: #000000;
+    margin: 0;
+    padding: 20px 0;
 }
-
-
 
 .page {
     width: 596pt;
@@ -31,9 +31,26 @@ body {
     padding-right: 88.2pt;
     padding-bottom: 50pt;
     background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin: 0 auto 20px auto;
     font-size: 10pt;
     line-height: 1.25;
     overflow: hidden;
+}
+
+@media print {
+    body {
+        background-color: transparent;
+        padding: 0;
+    }
+    .page {
+        box-shadow: none;
+        margin: 0;
+        page-break-after: always;
+    }
+    .page:last-of-type {
+        page-break-after: avoid;
+    }
 }
 
 .page:last-of-type {

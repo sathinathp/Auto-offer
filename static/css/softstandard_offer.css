@@ -13,6 +13,9 @@ body {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
     font-family: 'Arimo', 'Liberation Sans', 'Arial', sans-serif;
+    background-color: #333639;
+    margin: 0;
+    padding: 20px 0;
 }
 
 .page {
@@ -28,9 +31,24 @@ body {
     line-height: 1.2;
     color: #000000;
     overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    margin: 0 auto 20px auto;
 }
-.page:last-of-type {
-    page-break-after: avoid;
+
+@media print {
+    body {
+        background-color: transparent;
+        padding: 0;
+    }
+    .page {
+        box-shadow: none;
+        margin: 0;
+        page-break-after: always;
+    }
+    .page:last-of-type {
+        page-break-after: avoid;
+    }
 }
 
 .header {
