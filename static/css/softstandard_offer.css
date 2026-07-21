@@ -257,25 +257,25 @@ ul.bullets li {
 
 /* Page 4 overrides — compact layout to fit signatures at the bottom */
 #page-4 {
-    line-height: 1.15;
+    line-height: 1.12;
 }
 #page-4 p {
-    margin-bottom: 6pt;
+    margin-bottom: 4pt;
 }
 #page-4 .sub-list {
-    margin-bottom: 6pt;
+    margin-bottom: 4pt;
 }
 #page-4 .sub-item {
-    margin-bottom: 4.5pt;
+    margin-bottom: 2.5pt;
 }
 #page-4 ul.bullets {
-    margin-bottom: 6pt;
+    margin-bottom: 4pt;
 }
 #page-4 ul.bullets li {
-    margin-bottom: 2pt;
+    margin-bottom: 1.5pt;
 }
 #page-4 .signatures-wrapper {
-    margin-top: 20pt;
+    margin-top: 10pt;
 }
 
 /* Page 5 Annexure */
