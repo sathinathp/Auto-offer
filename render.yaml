@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: offer-letter-generator
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile

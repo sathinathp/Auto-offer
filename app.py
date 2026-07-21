@@ -1,6 +1,6 @@
 import os
 import re
-from flask import Flask, render_template, request, send_file, jsonify
+from flask import Flask, render_template, request, send_file, jsonify, redirect
 import weasyprint
 
 app = Flask(__name__)
@@ -285,8 +285,10 @@ def get_softstandard_form_data(req_form):
 def index():
     return render_template('index.html')
 
-@app.route('/preview', methods=['POST'])
+@app.route('/preview', methods=['GET', 'POST'])
 def preview():
+    if request.method == 'GET':
+        return redirect('/')
     company = request.form.get('company_template', 'bluebix')
     if company == 'petabytz':
         data = get_petabytz_form_data(request.form)
@@ -301,67 +303,91 @@ def preview():
         data['preview_mode'] = True
         return render_template('offer_letters/bluebix_offer.html', **data)
 
-@app.route('/generate', methods=['POST'])
+@app.route('/generate', methods=['GET', 'POST'])
 def generate():
-    company = request.form.get('company_template', 'bluebix')
-    if company == 'petabytz':
-        data = get_petabytz_form_data(request.form)
-        data['preview_mode'] = False
-        html_content = render_template('offer_letters/petabytz_offer.html', **data)
-        output_pdf_path = os.path.join('output', f"PetaBytz_Offer_Letter_{data['candidate_name'].replace(' ', '_')}.pdf")
-    elif company == 'softstandard':
-        data = get_softstandard_form_data(request.form)
-        data['preview_mode'] = False
-        html_content = render_template('offer_letters/softstandard_offer.html', **data)
-        output_pdf_path = os.path.join('output', f"SoftStandard_Offer_Letter_{data['candidate_name'].replace(' ', '_')}.pdf")
-    else:
-        data = get_bluebix_form_data(request.form)
-        data['preview_mode'] = False
-        html_content = render_template('offer_letters/bluebix_offer.html', **data)
-        output_pdf_path = os.path.join('output', f"Offer_Letter_{data['candidate_name'].replace(' ', '_')}.pdf")
+    if request.method == 'GET':
+        return redirect('/')
+    try:
+        company = request.form.get('company_template', 'bluebix')
+        if company == 'petabytz':
+            data = get_petabytz_form_data(request.form)
+            data['preview_mode'] = False
+            html_content = render_template('offer_letters/petabytz_offer.html', **data)
+            safe_name = re.sub(r'[/\\?%*:|"<>]', '_', str(data['candidate_name'])).replace(' ', '_')
+            output_pdf_path = os.path.join('output', f"PetaBytz_Offer_Letter_{safe_name}.pdf")
+        elif company == 'softstandard':
+            data = get_softstandard_form_data(request.form)
+            data['preview_mode'] = False
+            html_content = render_template('offer_letters/softstandard_offer.html', **data)
+            safe_name = re.sub(r'[/\\?%*:|"<>]', '_', str(data['candidate_name'])).replace(' ', '_')
+            output_pdf_path = os.path.join('output', f"SoftStandard_Offer_Letter_{safe_name}.pdf")
+        else:
+            data = get_bluebix_form_data(request.form)
+            data['preview_mode'] = False
+            html_content = render_template('offer_letters/bluebix_offer.html', **data)
+            safe_name = re.sub(r'[/\\?%*:|"<>]', '_', str(data['candidate_name'])).replace(' ', '_')
+            output_pdf_path = os.path.join('output', f"Offer_Letter_{safe_name}.pdf")
 
-    abs_base = os.path.abspath(".")
-    weasyprint.HTML(string=html_content, base_url=abs_base).write_pdf(output_pdf_path)
-    return send_file(output_pdf_path, as_attachment=True, download_name=os.path.basename(output_pdf_path))
+        os.makedirs('output', exist_ok=True)
+        abs_base = os.path.abspath(".")
+        weasyprint.HTML(string=html_content, base_url=abs_base).write_pdf(output_pdf_path)
+        return send_file(output_pdf_path, as_attachment=True, download_name=os.path.basename(output_pdf_path))
+    except Exception as e:
+        import traceback
+        err_details = traceback.format_exc()
+        print("Error during PDF generation:\n", err_details)
+        return f"<h2>PDF Generation Error</h2><p>Server encountered an error while rendering PDF with WeasyPrint. Make sure Render is configured to use Docker environment (which includes Pango/Cairo system libraries).</p><pre>{err_details}</pre>", 500
 
-@app.route('/email', methods=['POST'])
+@app.route('/email', methods=['GET', 'POST'])
 def email_offer():
-    email_address = request.form.get('email', '')
-    company = request.form.get('company_template', 'bluebix')
-    
-    if company == 'petabytz':
-        candidate_name = request.form.get('pbt_candidate_name', 'Candidate')
-    elif company == 'softstandard':
-        candidate_name = request.form.get('sss_candidate_name', 'Candidate')
-    else:
-        candidate_name = request.form.get('candidate_name', 'Candidate')
+    if request.method == 'GET':
+        return redirect('/')
+    try:
+        email_address = request.form.get('email', '')
+        company = request.form.get('company_template', 'bluebix')
         
-    if not email_address:
-        return jsonify({'status': 'error', 'message': 'Email address is required.'}), 400
+        if company == 'petabytz':
+            candidate_name = request.form.get('pbt_candidate_name', 'Candidate')
+        elif company == 'softstandard':
+            candidate_name = request.form.get('sss_candidate_name', 'Candidate')
+        else:
+            candidate_name = request.form.get('candidate_name', 'Candidate')
+            
+        if not email_address:
+            return jsonify({'status': 'error', 'message': 'Email address is required.'}), 400
 
-    if company == 'petabytz':
-        data = get_petabytz_form_data(request.form)
-        data['preview_mode'] = False
-        html_content = render_template('offer_letters/petabytz_offer.html', **data)
-        output_pdf_path = os.path.join('output', f"PetaBytz_Offer_Letter_{data['candidate_name'].replace(' ', '_')}.pdf")
-    elif company == 'softstandard':
-        data = get_softstandard_form_data(request.form)
-        data['preview_mode'] = False
-        html_content = render_template('offer_letters/softstandard_offer.html', **data)
-        output_pdf_path = os.path.join('output', f"SoftStandard_Offer_Letter_{data['candidate_name'].replace(' ', '_')}.pdf")
-    else:
-        data = get_bluebix_form_data(request.form)
-        data['preview_mode'] = False
-        html_content = render_template('offer_letters/bluebix_offer.html', **data)
-        output_pdf_path = os.path.join('output', f"Offer_Letter_{data['candidate_name'].replace(' ', '_')}.pdf")
+        if company == 'petabytz':
+            data = get_petabytz_form_data(request.form)
+            data['preview_mode'] = False
+            html_content = render_template('offer_letters/petabytz_offer.html', **data)
+            safe_name = re.sub(r'[/\\?%*:|"<>]', '_', str(data['candidate_name'])).replace(' ', '_')
+            output_pdf_path = os.path.join('output', f"PetaBytz_Offer_Letter_{safe_name}.pdf")
+        elif company == 'softstandard':
+            data = get_softstandard_form_data(request.form)
+            data['preview_mode'] = False
+            html_content = render_template('offer_letters/softstandard_offer.html', **data)
+            safe_name = re.sub(r'[/\\?%*:|"<>]', '_', str(data['candidate_name'])).replace(' ', '_')
+            output_pdf_path = os.path.join('output', f"SoftStandard_Offer_Letter_{safe_name}.pdf")
+        else:
+            data = get_bluebix_form_data(request.form)
+            data['preview_mode'] = False
+            html_content = render_template('offer_letters/bluebix_offer.html', **data)
+            safe_name = re.sub(r'[/\\?%*:|"<>]', '_', str(data['candidate_name'])).replace(' ', '_')
+            output_pdf_path = os.path.join('output', f"Offer_Letter_{safe_name}.pdf")
 
-    abs_base = os.path.abspath(".")
-    weasyprint.HTML(string=html_content, base_url=abs_base).write_pdf(output_pdf_path)
-    print(f"Mocking email delivery to {email_address} with attachment: {output_pdf_path}")
-    return jsonify({
-        'status': 'success',
-        'message': f'Offer Letter successfully emailed to {candidate_name} ({email_address})!'
-    })
+        os.makedirs('output', exist_ok=True)
+        abs_base = os.path.abspath(".")
+        weasyprint.HTML(string=html_content, base_url=abs_base).write_pdf(output_pdf_path)
+        print(f"Mocking email delivery to {email_address} with attachment: {output_pdf_path}")
+        return jsonify({
+            'status': 'success',
+            'message': f'Offer Letter successfully emailed to {candidate_name} ({email_address})!'
+        })
+    except Exception as e:
+        import traceback
+        err_details = traceback.format_exc()
+        print("Error during email offer generation:\n", err_details)
+        return jsonify({'status': 'error', 'message': f'PDF Generation Failed: {str(e)}'}), 500
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5001))
