@@ -4,23 +4,6 @@
     <meta charset="utf-8">
     <title>Bluebix Offer Letter</title>
     <link rel="stylesheet" href="static/css/bluebix_offer.css">
-    <style>
-        .page {
-            font-size: 11pt !important;
-            line-height: 1.18 !important;
-            padding-top: 65pt !important;
-            padding-bottom: 35pt !important;
-        }
-        p {
-            margin-bottom: 5pt !important;
-        }
-        .contingency-item {
-            margin-bottom: 4pt !important;
-        }
-        .sub-item {
-            margin-bottom: 2pt !important;
-        }
-    </style>
 </head>
 <body>
 
@@ -31,17 +14,17 @@
        <img src="static/images/divider.png" class="header-line-img" />
    </div>
    <div class="content">
-       <div class="doc-header-row" style="margin-bottom: 8pt; overflow: hidden;">
+       <div class="doc-header-row" style="margin-bottom: 12pt; overflow: hidden;">
            <span class="bold" style="float: left;">PRIVATE AND CONFIDENTIAL</span>
            <span style="float: right;">{{ date | default('26 February 2026') }}</span>
        </div>
        
-       <div class="candidate-address" style="margin-bottom: 8pt; line-height: 1.2;">
+       <div class="candidate-address" style="margin-bottom: 10pt; line-height: 1.25;">
            <span class="bold">{{ title | default('Ms.') }} {{ candidate_name | default('Bandi Dharani') }},</span><br/>
            <span class="bold">{{ candidate_phone | default('+91 8179434324') }}</span>
        </div>
        
-       <div class="subject center bold" style="text-align: center; font-weight: bold; margin-top: 6pt; margin-bottom: 8pt; text-decoration: underline;">Sub: Employment Offer</div>
+       <div class="subject center bold" style="text-align: center; font-weight: bold; margin-top: 8pt; margin-bottom: 10pt; text-decoration: underline;">Sub: Employment Offer</div>
        
        <p>Dear <span class="bold">{{ candidate_name | default('Bandi Dharani') }}</span>,</p>
        
@@ -71,7 +54,7 @@
    </div>
    <div class="footer">
        <div class="footer-line"></div>
-       <div class="footer-text">BLUEBIX SOLUTIONS INC I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+       <div class="footer-text">{{ footer_text | default('Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.') }}</div>
    </div>
 </div>
 
@@ -131,7 +114,7 @@
    </div>
    <div class="footer">
        <div class="footer-line"></div>
-       <div class="footer-text">BLUEBIX SOLUTIONS INC I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+       <div class="footer-text">{{ footer_text | default('Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.') }}</div>
    </div>
 </div>
 
@@ -186,7 +169,7 @@
    </div>
    <div class="footer">
        <div class="footer-line"></div>
-       <div class="footer-text">BLUEBIX SOLUTIONS INC I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+       <div class="footer-text">{{ footer_text | default('Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.') }}</div>
    </div>
 </div>
 
@@ -244,7 +227,7 @@
    </div>
    <div class="footer">
        <div class="footer-line"></div>
-       <div class="footer-text">BLUEBIX SOLUTIONS INC I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+       <div class="footer-text">{{ footer_text | default('Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.') }}</div>
    </div>
 </div>
 
@@ -368,7 +351,7 @@
    </div>
    <div class="footer">
        <div class="footer-line"></div>
-       <div class="footer-text">BLUEBIX SOLUTIONS INC I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.</div>
+       <div class="footer-text">{{ footer_text | default('Petabytz Technologies Pvt Ltd I Plot no 201 & 202, Kavuri Hills Rd, Guttala_Begumpet, Kavuri Hills, Hyderabad, 5500033.') }}</div>
    </div>
 </div>
 
