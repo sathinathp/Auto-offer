@@ -255,27 +255,32 @@ ul.bullets li {
     margin-bottom: 8pt;
 }
 
-/* Page 4 overrides — compact layout to fit signatures at the bottom */
+/* Page 4 overrides — compact layout to keep signatures comfortably clear of footer */
 #page-4 {
-    line-height: 1.12;
+    font-size: 9.8pt;
+    line-height: 1.1;
 }
 #page-4 p {
-    margin-bottom: 4pt;
+    margin-bottom: 3pt;
 }
 #page-4 .sub-list {
-    margin-bottom: 4pt;
+    margin-bottom: 3pt;
 }
 #page-4 .sub-item {
-    margin-bottom: 2.5pt;
-}
-#page-4 ul.bullets {
-    margin-bottom: 4pt;
-}
-#page-4 ul.bullets li {
     margin-bottom: 1.5pt;
 }
+#page-4 ul.bullets {
+    margin-bottom: 3pt;
+}
+#page-4 ul.bullets li {
+    margin-bottom: 1pt;
+}
 #page-4 .signatures-wrapper {
-    margin-top: 10pt;
+    margin-top: 6pt;
+}
+#page-4 .sig-img {
+    height: 20pt;
+    margin-bottom: 2pt;
 }
 
 /* Page 5 Annexure */

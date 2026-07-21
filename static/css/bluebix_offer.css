@@ -232,23 +232,31 @@ ul.bullets li {
 }
 
 /* Page 4 overrides */
+#page-4 {
+    font-size: 9.8pt;
+    line-height: 1.1;
+}
 #page-4 p {
-    margin-bottom: 5pt;
-}
-#page-4 .sub-list {
-    margin-bottom: 5pt;
-}
-#page-4 .sub-item {
-    margin-bottom: 3.5pt;
-}
-#page-4 ul.bullets {
-    margin-bottom: 5pt;
-}
-#page-4 ul.bullets li {
     margin-bottom: 3pt;
 }
+#page-4 .sub-list {
+    margin-bottom: 3pt;
+}
+#page-4 .sub-item {
+    margin-bottom: 1.5pt;
+}
+#page-4 ul.bullets {
+    margin-bottom: 3pt;
+}
+#page-4 ul.bullets li {
+    margin-bottom: 1pt;
+}
 #page-4 .signatures-wrapper {
-    margin-top: 10pt;
+    margin-top: 6pt;
+}
+#page-4 .sig-img {
+    height: 20pt;
+    margin-bottom: 2pt;
 }
 
 /* Page 5 Annexure */
