@@ -187,20 +187,33 @@ ul.bullets li {
     line-height: 1.15;
 }
 /* Page 1 overrides */
+#page-1 {
+    line-height: 1.15;
+}
 #page-1 p {
-    margin-bottom: 7.5pt;
+    margin-bottom: 6.5pt;
+}
+#page-1 .candidate-address {
+    margin-bottom: 7pt;
+}
+#page-1 .date-row {
+    margin-bottom: 7pt;
+}
+#page-1 .subject {
+    margin-top: 6pt;
+    margin-bottom: 7pt;
 }
 #page-1 .letter-list {
-    margin-bottom: 7.5pt;
+    margin-bottom: 6.5pt;
 }
 #page-1 .list-item {
-    margin-bottom: 5.0pt;
+    margin-bottom: 4.0pt;
 }
 #page-1 ul.bullets {
-    margin-bottom: 7.5pt;
+    margin-bottom: 6.5pt;
 }
 #page-1 ul.bullets li {
-    margin-bottom: 3.0pt;
+    margin-bottom: 2.5pt;
 }
 
 /* Page 2 overrides */

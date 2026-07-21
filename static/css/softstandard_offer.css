@@ -191,34 +191,34 @@ ul.bullets li {
     line-height: 1.15;
 }
 
-/* Page 1 overrides — generous spacing matching the original format */
+/* Page 1 overrides — optimized spacing so Notice Period fits fully on Page 1 */
 #page-1 {
-    line-height: 1.22;
+    line-height: 1.15;
 }
 #page-1 p {
-    margin-bottom: 12pt;
+    margin-bottom: 7pt;
 }
 #page-1 .candidate-address {
-    margin-bottom: 12pt;
-}
-#page-1 .date-row {
-    margin-bottom: 12pt;
-}
-#page-1 .subject {
-    margin-top: 10pt;
-    margin-bottom: 12pt;
-}
-#page-1 .letter-list {
-    margin-bottom: 12pt;
-}
-#page-1 .list-item {
     margin-bottom: 8pt;
 }
+#page-1 .date-row {
+    margin-bottom: 8pt;
+}
+#page-1 .subject {
+    margin-top: 6pt;
+    margin-bottom: 8pt;
+}
+#page-1 .letter-list {
+    margin-bottom: 7pt;
+}
+#page-1 .list-item {
+    margin-bottom: 4pt;
+}
 #page-1 ul.bullets {
-    margin-bottom: 12pt;
+    margin-bottom: 7pt;
 }
 #page-1 ul.bullets li {
-    margin-bottom: 4pt;
+    margin-bottom: 3pt;
 }
 
 /* Page 2 overrides — generous spacing matching the original format */
