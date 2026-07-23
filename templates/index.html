@@ -1574,93 +1574,124 @@
       recalculateSalary();
     }
 
-    function recalculateSalary() {
-      if (!document.getElementById('auto_calc').checked) return;
-
-      const annualCTC = cleanNumber(document.getElementById('annual_ctc_input').value);
-      
-      // 1. Monthly CTC & Gross (assuming Employer PF = 0)
-      const monthlyCTC = Math.round(annualCTC / 12);
-      const monthlyGross = monthlyCTC; // since employer contribution is 0
-      
-      // 2. Breakdown Components
-      const basicMonthly = Math.round(monthlyGross * 0.50);
-      const hraMonthly = Math.round(monthlyGross * 0.20);
-      const conveyanceMonthly = Math.round(monthlyGross * 0.20);
-      const specialMonthly = monthlyGross - basicMonthly - hraMonthly - conveyanceMonthly;
-      
-      // 3. Totals
-      const employerPFMonthly = 0.0;
-      const totalAMonthly = 0;
-      
-      // Deductions
+    function syncTotalsBluebix() {
+      const basicMonthly = cleanNumber(document.getElementById('basic_monthly').value);
+      const hraMonthly = cleanNumber(document.getElementById('hra_monthly').value);
+      const conveyanceMonthly = cleanNumber(document.getElementById('conveyance_monthly').value);
+      const specialMonthly = cleanNumber(document.getElementById('special_allowance_monthly').value);
+      const employerPFMonthly = cleanNumber(document.getElementById('employer_pf_monthly').value);
       const employeePFMonthly = cleanNumber(document.getElementById('employee_pf_monthly').value);
       const professionalTaxMonthly = cleanNumber(document.getElementById('professional_tax_monthly').value);
+
+      const grossMonthly = basicMonthly + hraMonthly + conveyanceMonthly + specialMonthly;
+      const totalAMonthly = employerPFMonthly;
+      const ctcMonthly = grossMonthly + totalAMonthly;
       const totalBMonthly = employeePFMonthly + professionalTaxMonthly;
       const totalDeductionsMonthly = totalAMonthly + totalBMonthly;
-      
-      const netSalaryMonthly = monthlyGross - totalDeductionsMonthly;
+      const netSalaryMonthly = grossMonthly - totalDeductionsMonthly;
 
-      // Set fields - Monthly
+      // Update monthly fields
       document.getElementById('basic_monthly').value = formatIndianCurrency(basicMonthly);
       document.getElementById('hra_monthly').value = formatIndianCurrency(hraMonthly);
       document.getElementById('conveyance_monthly').value = formatIndianCurrency(conveyanceMonthly);
       document.getElementById('special_allowance_monthly').value = formatIndianCurrency(specialMonthly);
-      document.getElementById('gross_monthly').value = formatIndianCurrency(monthlyGross);
-      document.getElementById('employer_pf_monthly').value = "0.00";
-      document.getElementById('total_a_monthly').value = "0";
-      document.getElementById('ctc_monthly').value = formatIndianCurrency(monthlyCTC);
+      document.getElementById('employer_pf_monthly').value = formatIndianCurrency(employerPFMonthly);
       document.getElementById('employee_pf_monthly').value = formatIndianCurrency(employeePFMonthly);
       document.getElementById('professional_tax_monthly').value = formatIndianCurrency(professionalTaxMonthly);
+
+      document.getElementById('gross_monthly').value = formatIndianCurrency(grossMonthly);
+      document.getElementById('total_a_monthly').value = formatIndianCurrency(totalAMonthly);
+      document.getElementById('ctc_monthly').value = formatIndianCurrency(ctcMonthly);
       document.getElementById('total_b_monthly').value = formatIndianCurrency(totalBMonthly);
       document.getElementById('total_deductions_monthly').value = formatIndianCurrency(totalDeductionsMonthly);
       document.getElementById('net_salary_monthly').value = formatIndianCurrency(netSalaryMonthly);
 
-      // Set fields - Annual
+      // Update annual fields
       document.getElementById('basic_annual').value = formatIndianCurrency(basicMonthly * 12);
       document.getElementById('hra_annual').value = formatIndianCurrency(hraMonthly * 12);
       document.getElementById('conveyance_annual').value = formatIndianCurrency(conveyanceMonthly * 12);
       document.getElementById('special_allowance_annual').value = formatIndianCurrency(specialMonthly * 12);
-      document.getElementById('gross_annual').value = formatIndianCurrency(monthlyGross * 12);
-      document.getElementById('employer_pf_annual').value = "0";
-      document.getElementById('total_a_annual').value = "0";
-      document.getElementById('ctc_annual').value = formatIndianCurrency(monthlyCTC * 12);
+      document.getElementById('employer_pf_annual').value = formatIndianCurrency(employerPFMonthly * 12);
       document.getElementById('employee_pf_annual').value = formatIndianCurrency(employeePFMonthly * 12);
       document.getElementById('professional_tax_annual').value = formatIndianCurrency(professionalTaxMonthly * 12);
+      document.getElementById('gross_annual').value = formatIndianCurrency(grossMonthly * 12);
+      document.getElementById('total_a_annual').value = formatIndianCurrency(totalAMonthly * 12);
+      document.getElementById('ctc_annual').value = formatIndianCurrency(ctcMonthly * 12);
       document.getElementById('total_b_annual').value = formatIndianCurrency(totalBMonthly * 12);
       document.getElementById('total_deductions_annual').value = formatIndianCurrency(totalDeductionsMonthly * 12);
       document.getElementById('net_salary_annual').value = formatIndianCurrency(netSalaryMonthly * 12);
 
-      // CTC words
-      const words = convertNumberToWords(annualCTC);
-      document.getElementById('annual_ctc_words').value = words;
-      
-      // Update form values text field with commas
+      // Update CTC inputs
+      const annualCTC = ctcMonthly * 12;
       document.getElementById('annual_ctc_input').value = formatIndianCurrency(annualCTC);
+      document.getElementById('annual_ctc').value = formatIndianCurrency(annualCTC);
+      document.getElementById('annual_ctc_words').value = convertNumberToWords(annualCTC);
+
+      if (typeof syncBluebixWording === 'function') {
+        syncBluebixWording();
+      }
     }
 
-    // Attach listeners
+    function recalculateSalary() {
+      if (document.getElementById('auto_calc').checked) {
+        const annualCTC = cleanNumber(document.getElementById('annual_ctc_input').value);
+        const monthlyCTC = Math.round(annualCTC / 12);
+        const monthlyGross = monthlyCTC; // since employer contribution is 0
+
+        const basicMonthly = Math.round(monthlyGross * 0.50);
+        const hraMonthly = Math.round(monthlyGross * 0.20);
+        const conveyanceMonthly = Math.round(monthlyGross * 0.20);
+        const specialMonthly = monthlyGross - basicMonthly - hraMonthly - conveyanceMonthly;
+
+        document.getElementById('basic_monthly').value = formatIndianCurrency(basicMonthly);
+        document.getElementById('hra_monthly').value = formatIndianCurrency(hraMonthly);
+        document.getElementById('conveyance_monthly').value = formatIndianCurrency(conveyanceMonthly);
+        document.getElementById('special_allowance_monthly').value = formatIndianCurrency(specialMonthly);
+        document.getElementById('employer_pf_monthly').value = "0.00";
+      }
+
+      syncTotalsBluebix();
+    }
+
+    // Attach listeners for Bluebix
+    const bluebixSalaryIds = [
+      'basic_monthly', 'basic_annual',
+      'hra_monthly', 'hra_annual',
+      'conveyance_monthly', 'conveyance_annual',
+      'special_allowance_monthly', 'special_allowance_annual',
+      'gross_monthly', 'gross_annual',
+      'employer_pf_monthly', 'employer_pf_annual',
+      'total_a_monthly', 'total_a_annual',
+      'ctc_monthly', 'ctc_annual',
+      'employee_pf_monthly', 'employee_pf_annual',
+      'professional_tax_monthly', 'professional_tax_annual',
+      'total_b_monthly', 'total_b_annual',
+      'total_deductions_monthly', 'total_deductions_annual',
+      'net_salary_monthly', 'net_salary_annual'
+    ];
+
+    bluebixSalaryIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('change', function() {
+          if (id.endsWith('_annual')) {
+            const monthlyId = id.replace('_annual', '_monthly');
+            const monthlyEl = document.getElementById(monthlyId);
+            if (monthlyEl) {
+              monthlyEl.value = formatIndianCurrency(cleanNumber(el.value) / 12);
+            }
+          } else if (id.endsWith('_monthly')) {
+            el.value = formatIndianCurrency(cleanNumber(el.value));
+          }
+          syncTotalsBluebix();
+          triggerSubmit();
+        });
+      }
+    });
+
     document.getElementById('annual_ctc_input').addEventListener('blur', function() {
       recalculateSalary();
       triggerSubmit();
-    });
-
-    document.getElementById('employee_pf_monthly').addEventListener('change', function() {
-      recalculateSalary();
-      triggerSubmit();
-    });
-
-    document.getElementById('professional_tax_monthly').addEventListener('change', function() {
-      recalculateSalary();
-      triggerSubmit();
-    });
-
-    document.querySelectorAll('.calc-field').forEach(input => {
-      input.addEventListener('change', function() {
-        if (!document.getElementById('auto_calc').checked) {
-          triggerSubmit();
-        }
-      });
     });
 
     // Form live preview on change of any text fields
@@ -1674,8 +1705,6 @@
 
     // Toggle logic
     document.getElementById('auto_calc').addEventListener('change', function() {
-      const inputs = document.querySelectorAll('.calc-field');
-      inputs.forEach(inp => inp.readOnly = this.checked);
       if (this.checked) {
         recalculateSalary();
       }
@@ -1684,11 +1713,6 @@
 
     // Initial page load trigger
     window.addEventListener('DOMContentLoaded', () => {
-      // Disable calculation fields by default since auto_calc is checked
-      document.querySelectorAll('.calc-field').forEach(inp => inp.readOnly = true);
-      document.querySelectorAll('.pbt-calc-field').forEach(inp => inp.readOnly = true);
-      document.querySelectorAll('.sss-calc-field').forEach(inp => inp.readOnly = true);
-      
       // Force initial load of iframe
       setTimeout(triggerSubmit, 600);
     });
@@ -1763,14 +1787,6 @@
         activeBtn.style.border = 'none';
       }
 
-      if (isPbt) {
-        document.querySelectorAll('.pbt-calc-field').forEach(inp => inp.readOnly = document.getElementById('pbt_auto_calc').checked);
-      } else if (isSss) {
-        document.querySelectorAll('.sss-calc-field').forEach(inp => inp.readOnly = document.getElementById('sss_auto_calc').checked);
-      } else {
-        document.querySelectorAll('.calc-field').forEach(inp => inp.readOnly = document.getElementById('auto_calc').checked);
-      }
-
       triggerSubmit();
     }
 
@@ -1788,34 +1804,31 @@
       recalculatePbtSalary();
     }
 
-    function recalculatePbtSalary() {
-      if (!document.getElementById('pbt_auto_calc').checked) return;
-
-      const annualCTC = cleanNumber(document.getElementById('pbt_annual_ctc_input').value);
-      const monthlyCTC = Math.round(annualCTC / 12);
-      const monthlyGross = monthlyCTC;
-
-      // PetaBytz split: Basic=50%, HRA=20%, LTA=10%, Other=20%
-      const basicMonthly  = Math.round(monthlyGross * 0.50);
-      const hraMonthly    = Math.round(monthlyGross * 0.20);
-      const ltaMonthly    = Math.round(monthlyGross * 0.10);
-      const otherMonthly  = monthlyGross - basicMonthly - hraMonthly - ltaMonthly;
-
+    function syncTotalsPbt() {
+      const basicMonthly = cleanNumber(document.getElementById('pbt_basic_monthly').value);
+      const hraMonthly = cleanNumber(document.getElementById('pbt_hra_monthly').value);
+      const ltaMonthly = cleanNumber(document.getElementById('pbt_lta_monthly').value);
+      const otherMonthly = cleanNumber(document.getElementById('pbt_other_allowance_monthly').value);
+      const employerPFMonthly = cleanNumber(document.getElementById('pbt_employer_pf_monthly').value);
       const employeePFMonthly = cleanNumber(document.getElementById('pbt_employee_pf_monthly').value);
       const professionalTaxMonthly = cleanNumber(document.getElementById('pbt_professional_tax_monthly').value);
+
+      const grossMonthly = basicMonthly + hraMonthly + ltaMonthly + otherMonthly;
+      const totalAMonthly = employerPFMonthly;
+      const ctcMonthly = grossMonthly + totalAMonthly;
       const totalBMonthly = employeePFMonthly + professionalTaxMonthly;
-      const totalDeductionsMonthly = totalBMonthly; // total A is 0
-      const netSalaryMonthly = monthlyGross - totalDeductionsMonthly;
+      const totalDeductionsMonthly = totalAMonthly + totalBMonthly;
+      const netSalaryMonthly = grossMonthly - totalDeductionsMonthly;
 
       // Monthly fields
       document.getElementById('pbt_basic_monthly').value             = formatIndianCurrency(basicMonthly);
       document.getElementById('pbt_hra_monthly').value               = formatIndianCurrency(hraMonthly);
       document.getElementById('pbt_lta_monthly').value               = formatIndianCurrency(ltaMonthly);
       document.getElementById('pbt_other_allowance_monthly').value   = formatIndianCurrency(otherMonthly);
-      document.getElementById('pbt_gross_monthly').value             = formatIndianCurrency(monthlyGross);
-      document.getElementById('pbt_employer_pf_monthly').value       = '0';
-      document.getElementById('pbt_total_a_monthly').value           = '0';
-      document.getElementById('pbt_ctc_monthly').value               = formatIndianCurrency(monthlyCTC);
+      document.getElementById('pbt_gross_monthly').value             = formatIndianCurrency(grossMonthly);
+      document.getElementById('pbt_employer_pf_monthly').value       = formatIndianCurrency(employerPFMonthly);
+      document.getElementById('pbt_total_a_monthly').value           = formatIndianCurrency(totalAMonthly);
+      document.getElementById('pbt_ctc_monthly').value               = formatIndianCurrency(ctcMonthly);
       document.getElementById('pbt_employee_pf_monthly').value       = formatIndianCurrency(employeePFMonthly);
       document.getElementById('pbt_professional_tax_monthly').value  = formatIndianCurrency(professionalTaxMonthly);
       document.getElementById('pbt_total_b_monthly').value           = formatIndianCurrency(totalBMonthly);
@@ -1827,10 +1840,10 @@
       document.getElementById('pbt_hra_annual').value               = formatIndianCurrency(hraMonthly * 12);
       document.getElementById('pbt_lta_annual').value               = formatIndianCurrency(ltaMonthly * 12);
       document.getElementById('pbt_other_allowance_annual').value   = formatIndianCurrency(otherMonthly * 12);
-      document.getElementById('pbt_gross_annual').value             = formatIndianCurrency(monthlyGross * 12);
-      document.getElementById('pbt_employer_pf_annual').value       = '0';
-      document.getElementById('pbt_total_a_annual').value           = '0';
-      document.getElementById('pbt_ctc_annual').value               = formatIndianCurrency(monthlyCTC * 12);
+      document.getElementById('pbt_gross_annual').value             = formatIndianCurrency(grossMonthly * 12);
+      document.getElementById('pbt_employer_pf_annual').value       = formatIndianCurrency(employerPFMonthly * 12);
+      document.getElementById('pbt_total_a_annual').value           = formatIndianCurrency(totalAMonthly * 12);
+      document.getElementById('pbt_ctc_annual').value               = formatIndianCurrency(ctcMonthly * 12);
       document.getElementById('pbt_employee_pf_annual').value       = formatIndianCurrency(employeePFMonthly * 12);
       document.getElementById('pbt_professional_tax_annual').value  = formatIndianCurrency(professionalTaxMonthly * 12);
       document.getElementById('pbt_total_b_annual').value           = formatIndianCurrency(totalBMonthly * 12);
@@ -1838,13 +1851,35 @@
       document.getElementById('pbt_net_salary_annual').value        = formatIndianCurrency(netSalaryMonthly * 12);
 
       // CTC words & formatted input
+      const annualCTC = ctcMonthly * 12;
       document.getElementById('pbt_annual_ctc_words').value   = convertNumberToWords(annualCTC);
       document.getElementById('pbt_annual_ctc_input').value   = formatIndianCurrency(annualCTC);
+      document.getElementById('pbt_annual_ctc').value         = formatIndianCurrency(annualCTC);
+    }
+
+    function recalculatePbtSalary() {
+      if (document.getElementById('pbt_auto_calc').checked) {
+        const annualCTC = cleanNumber(document.getElementById('pbt_annual_ctc_input').value);
+        const monthlyCTC = Math.round(annualCTC / 12);
+        const monthlyGross = monthlyCTC;
+
+        const basicMonthly  = Math.round(monthlyGross * 0.50);
+        const hraMonthly    = Math.round(monthlyGross * 0.20);
+        const ltaMonthly    = Math.round(monthlyGross * 0.10);
+        const otherMonthly  = monthlyGross - basicMonthly - hraMonthly - ltaMonthly;
+
+        document.getElementById('pbt_basic_monthly').value             = formatIndianCurrency(basicMonthly);
+        document.getElementById('pbt_hra_monthly').value               = formatIndianCurrency(hraMonthly);
+        document.getElementById('pbt_lta_monthly').value               = formatIndianCurrency(ltaMonthly);
+        document.getElementById('pbt_other_allowance_monthly').value   = formatIndianCurrency(otherMonthly);
+        document.getElementById('pbt_employer_pf_monthly').value       = '0';
+      }
+
+      syncTotalsPbt();
     }
 
     // PBT auto_calc toggle
     document.getElementById('pbt_auto_calc').addEventListener('change', function() {
-      document.querySelectorAll('.pbt-calc-field').forEach(inp => inp.readOnly = this.checked);
       if (this.checked) recalculatePbtSalary();
       triggerSubmit();
     });
@@ -1855,16 +1890,40 @@
       triggerSubmit();
     });
 
-    // PBT Employee PF and Professional Tax manual change
-    document.getElementById('pbt_employee_pf_monthly').addEventListener('change', function() {
-      recalculatePbtSalary(); triggerSubmit();
-    });
-    document.getElementById('pbt_professional_tax_monthly').addEventListener('change', function() {
-      recalculatePbtSalary(); triggerSubmit();
-    });
+    const pbtSalaryIds = [
+      'pbt_basic_monthly', 'pbt_basic_annual',
+      'pbt_hra_monthly', 'pbt_hra_annual',
+      'pbt_lta_monthly', 'pbt_lta_annual',
+      'pbt_other_allowance_monthly', 'pbt_other_allowance_annual',
+      'pbt_gross_monthly', 'pbt_gross_annual',
+      'pbt_employer_pf_monthly', 'pbt_employer_pf_annual',
+      'pbt_total_a_monthly', 'pbt_total_a_annual',
+      'pbt_ctc_monthly', 'pbt_ctc_annual',
+      'pbt_employee_pf_monthly', 'pbt_employee_pf_annual',
+      'pbt_professional_tax_monthly', 'pbt_professional_tax_annual',
+      'pbt_total_b_monthly', 'pbt_total_b_annual',
+      'pbt_total_deductions_monthly', 'pbt_total_deductions_annual',
+      'pbt_net_salary_monthly', 'pbt_net_salary_annual'
+    ];
 
-    // Initial readOnly for pbt calc fields
-    document.querySelectorAll('.pbt-calc-field').forEach(inp => inp.readOnly = true);
+    pbtSalaryIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('change', function() {
+          if (id.endsWith('_annual')) {
+            const monthlyId = id.replace('_annual', '_monthly');
+            const monthlyEl = document.getElementById(monthlyId);
+            if (monthlyEl) {
+              monthlyEl.value = formatIndianCurrency(cleanNumber(el.value) / 12);
+            }
+          } else if (id.endsWith('_monthly')) {
+            el.value = formatIndianCurrency(cleanNumber(el.value));
+          }
+          syncTotalsPbt();
+          triggerSubmit();
+        });
+      }
+    });
 
     // Sync Job Terms inputs with wording textareas
     document.getElementById('pbt_work_shift').addEventListener('change', function() {
@@ -1899,37 +1958,31 @@
       recalculateSssSalary();
     }
 
-    function recalculateSssSalary() {
-      if (!document.getElementById('sss_auto_calc').checked) return;
-
-      const annualCTC = cleanNumber(document.getElementById('sss_annual_ctc_input').value);
-      const monthlyCTC = Math.round(annualCTC / 12);
-      const monthlyGross = monthlyCTC;
-
-      // SoftStandard split: Basic=50%, HRA=20%, Conveyance=20%, Special=10% (Gross - others)
-      const basicMonthly      = Math.round(monthlyGross * 0.50);
-      const hraMonthly        = Math.round(monthlyGross * 0.20);
-      const conveyanceMonthly = Math.round(monthlyGross * 0.20);
-      const specialMonthly    = monthlyGross - basicMonthly - hraMonthly - conveyanceMonthly;
-
-      const employerPFMonthly = 0.0;
-      const totalAMonthly = 0;
-
+    function syncTotalsSss() {
+      const basicMonthly = cleanNumber(document.getElementById('sss_basic_monthly').value);
+      const hraMonthly = cleanNumber(document.getElementById('sss_hra_monthly').value);
+      const conveyanceMonthly = cleanNumber(document.getElementById('sss_conveyance_monthly').value);
+      const specialMonthly = cleanNumber(document.getElementById('sss_special_allowance_monthly').value);
+      const employerPFMonthly = cleanNumber(document.getElementById('sss_employer_pf_monthly').value);
       const employeePFMonthly = cleanNumber(document.getElementById('sss_employee_pf_monthly').value);
       const professionalTaxMonthly = cleanNumber(document.getElementById('sss_professional_tax_monthly').value);
+
+      const grossMonthly = basicMonthly + hraMonthly + conveyanceMonthly + specialMonthly;
+      const totalAMonthly = employerPFMonthly;
+      const ctcMonthly = grossMonthly + totalAMonthly;
       const totalBMonthly = employeePFMonthly + professionalTaxMonthly;
       const totalDeductionsMonthly = totalAMonthly + totalBMonthly;
-      const netSalaryMonthly = monthlyGross - totalDeductionsMonthly;
+      const netSalaryMonthly = grossMonthly - totalDeductionsMonthly;
 
       // Monthly fields
       document.getElementById('sss_basic_monthly').value            = formatIndianCurrency(basicMonthly);
       document.getElementById('sss_hra_monthly').value              = formatIndianCurrency(hraMonthly);
       document.getElementById('sss_conveyance_monthly').value       = formatIndianCurrency(conveyanceMonthly);
       document.getElementById('sss_special_allowance_monthly').value = formatIndianCurrency(specialMonthly);
-      document.getElementById('sss_gross_monthly').value            = formatIndianCurrency(monthlyGross);
-      document.getElementById('sss_employer_pf_monthly').value      = "0.00";
-      document.getElementById('sss_total_a_monthly').value          = "0";
-      document.getElementById('sss_ctc_monthly').value              = formatIndianCurrency(monthlyCTC);
+      document.getElementById('sss_gross_monthly').value            = formatIndianCurrency(grossMonthly);
+      document.getElementById('sss_employer_pf_monthly').value      = formatIndianCurrency(employerPFMonthly);
+      document.getElementById('sss_total_a_monthly').value          = formatIndianCurrency(totalAMonthly);
+      document.getElementById('sss_ctc_monthly').value              = formatIndianCurrency(ctcMonthly);
       document.getElementById('sss_employee_pf_monthly').value      = formatIndianCurrency(employeePFMonthly);
       document.getElementById('sss_professional_tax_monthly').value = formatIndianCurrency(professionalTaxMonthly);
       document.getElementById('sss_total_b_monthly').value          = formatIndianCurrency(totalBMonthly);
@@ -1941,10 +1994,10 @@
       document.getElementById('sss_hra_annual').value              = formatIndianCurrency(hraMonthly * 12);
       document.getElementById('sss_conveyance_annual').value       = formatIndianCurrency(conveyanceMonthly * 12);
       document.getElementById('sss_special_allowance_annual').value = formatIndianCurrency(specialMonthly * 12);
-      document.getElementById('sss_gross_annual').value            = formatIndianCurrency(monthlyGross * 12);
-      document.getElementById('sss_employer_pf_annual').value      = "0";
-      document.getElementById('sss_total_a_annual').value          = "0";
-      document.getElementById('sss_ctc_annual').value              = formatIndianCurrency(monthlyCTC * 12);
+      document.getElementById('sss_gross_annual').value            = formatIndianCurrency(grossMonthly * 12);
+      document.getElementById('sss_employer_pf_annual').value      = formatIndianCurrency(employerPFMonthly * 12);
+      document.getElementById('sss_total_a_annual').value          = formatIndianCurrency(totalAMonthly * 12);
+      document.getElementById('sss_ctc_annual').value              = formatIndianCurrency(ctcMonthly * 12);
       document.getElementById('sss_employee_pf_annual').value      = formatIndianCurrency(employeePFMonthly * 12);
       document.getElementById('sss_professional_tax_annual').value = formatIndianCurrency(professionalTaxMonthly * 12);
       document.getElementById('sss_total_b_annual').value          = formatIndianCurrency(totalBMonthly * 12);
@@ -1952,13 +2005,39 @@
       document.getElementById('sss_net_salary_annual').value        = formatIndianCurrency(netSalaryMonthly * 12);
 
       // CTC words & formatted input
+      const annualCTC = ctcMonthly * 12;
       document.getElementById('sss_annual_ctc_words').value   = convertNumberToWords(annualCTC);
       document.getElementById('sss_annual_ctc_input').value   = formatIndianCurrency(annualCTC);
+      document.getElementById('sss_annual_ctc').value         = formatIndianCurrency(annualCTC);
+
+      if (typeof syncSssWording === 'function') {
+        syncSssWording();
+      }
+    }
+
+    function recalculateSssSalary() {
+      if (document.getElementById('sss_auto_calc').checked) {
+        const annualCTC = cleanNumber(document.getElementById('sss_annual_ctc_input').value);
+        const monthlyCTC = Math.round(annualCTC / 12);
+        const monthlyGross = monthlyCTC;
+
+        const basicMonthly      = Math.round(monthlyGross * 0.50);
+        const hraMonthly        = Math.round(monthlyGross * 0.20);
+        const conveyanceMonthly = Math.round(monthlyGross * 0.20);
+        const specialMonthly    = monthlyGross - basicMonthly - hraMonthly - conveyanceMonthly;
+
+        document.getElementById('sss_basic_monthly').value            = formatIndianCurrency(basicMonthly);
+        document.getElementById('sss_hra_monthly').value              = formatIndianCurrency(hraMonthly);
+        document.getElementById('sss_conveyance_monthly').value       = formatIndianCurrency(conveyanceMonthly);
+        document.getElementById('sss_special_allowance_monthly').value = formatIndianCurrency(specialMonthly);
+        document.getElementById('sss_employer_pf_monthly').value      = "0.00";
+      }
+
+      syncTotalsSss();
     }
 
     // SSS auto_calc toggle
     document.getElementById('sss_auto_calc').addEventListener('change', function() {
-      document.querySelectorAll('.sss-calc-field').forEach(inp => inp.readOnly = this.checked);
       if (this.checked) recalculateSssSalary();
       triggerSubmit();
     });
@@ -1969,16 +2048,40 @@
       triggerSubmit();
     });
 
-    // SSS Employee PF and PT changes
-    document.getElementById('sss_employee_pf_monthly').addEventListener('change', function() {
-      recalculateSssSalary(); triggerSubmit();
-    });
-    document.getElementById('sss_professional_tax_monthly').addEventListener('change', function() {
-      recalculateSssSalary(); triggerSubmit();
-    });
+    const sssSalaryIds = [
+      'sss_basic_monthly', 'sss_basic_annual',
+      'sss_hra_monthly', 'sss_hra_annual',
+      'sss_conveyance_monthly', 'sss_conveyance_annual',
+      'sss_special_allowance_monthly', 'sss_special_allowance_annual',
+      'sss_gross_monthly', 'sss_gross_annual',
+      'sss_employer_pf_monthly', 'sss_employer_pf_annual',
+      'sss_total_a_monthly', 'sss_total_a_annual',
+      'sss_ctc_monthly', 'sss_ctc_annual',
+      'sss_employee_pf_monthly', 'sss_employee_pf_annual',
+      'sss_professional_tax_monthly', 'sss_professional_tax_annual',
+      'sss_total_b_monthly', 'sss_total_b_annual',
+      'sss_total_deductions_monthly', 'sss_total_deductions_annual',
+      'sss_net_salary_monthly', 'sss_net_salary_annual'
+    ];
 
-    // Initial readOnly for sss calc fields
-    document.querySelectorAll('.sss-calc-field').forEach(inp => inp.readOnly = true);
+    sssSalaryIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('change', function() {
+          if (id.endsWith('_annual')) {
+            const monthlyId = id.replace('_annual', '_monthly');
+            const monthlyEl = document.getElementById(monthlyId);
+            if (monthlyEl) {
+              monthlyEl.value = formatIndianCurrency(cleanNumber(el.value) / 12);
+            }
+          } else if (id.endsWith('_monthly')) {
+            el.value = formatIndianCurrency(cleanNumber(el.value));
+          }
+          syncTotalsSss();
+          triggerSubmit();
+        });
+      }
+    });
 
     // Sync Bluebix wording
     function syncBluebixWording() {
